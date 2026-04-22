@@ -13,25 +13,30 @@
 </head>
 <body>
 
-<!-- UTILITY BAR -->
-<div class="util">
-  <div class="wrap">
-    <div class="left">
-      <span id="utilHours">Open today</span>
-    </div>
-    <div class="right">
-      <a href="tel:+19896317880">(989) 631-7880</a>
-      <a href="#contact">Directions</a>
-      <a href="https://www.facebook.com/McLarenDentalMidland" target="_blank" rel="noopener" style="color:var(--gold)">Facebook ↗</a>
+<!-- HEADER (utility + nav stacked, absolutely positioned so the hero video shows behind) -->
+<div class="site-header" id="siteHeader">
+
+  <!-- UTILITY BAR -->
+  <div class="util">
+    <div class="wrap">
+      <div class="left">
+        <span id="utilHours">Open today</span>
+      </div>
+      <div class="right">
+        <a href="tel:+19896317880">(989) 631-7880</a>
+        <a href="#contact">Directions</a>
+        <a href="https://www.facebook.com/McLarenDentalMidland" target="_blank" rel="noopener" style="color:var(--gold)">Facebook ↗</a>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- NAV -->
-<header class="nav" id="nav">
-  <div class="wrap">
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="wrap">
     <a class="brand" href="#top" aria-label="McLaren Dental Associates home">
-      <img src="assets/logo-dark.png" alt="McLaren Dental Associates" />
+      <!-- Two logos — light version shows over the hero, dark takes over when scrolled -->
+      <img class="brand-logo brand-logo-light" src="assets/logo-white.png" alt="McLaren Dental Associates" />
+      <img class="brand-logo brand-logo-dark" src="assets/logo-dark.png" alt="" aria-hidden="true" />
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#services">Services</a>
@@ -48,8 +53,9 @@
         <svg width="20" height="14" viewBox="0 0 20 14"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.8"/></svg>
       </button>
     </div>
-  </div>
-</header>
+    </div>
+  </header>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="top">

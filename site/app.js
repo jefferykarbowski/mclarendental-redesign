@@ -1,9 +1,15 @@
 // McLaren Dental Associates — proposal demo
 // Clean, minimal JS for the static proof-of-concept.
 
-// ---------- Nav scrolled state ----------
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10));
+// ---------- Header scroll state ----------
+// Over the hero: header is transparent. Past ~50px of scroll, it locks into a
+// solid ivory fixed bar with the dark logo. Toggling a body class keeps all the
+// transparent→opaque rules centralised in CSS.
+(function headerScrollState(){
+  const apply = () => document.body.classList.toggle('header-stuck', window.scrollY > 50);
+  apply();
+  window.addEventListener('scroll', apply, { passive: true });
+})();
 
 // ---------- Hero video → fade to poster when finished ----------
 (function heroVideoToPoster(){
