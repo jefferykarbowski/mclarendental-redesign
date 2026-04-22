@@ -61,7 +61,12 @@
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-media-full">
-    <img src="assets/office.webp" alt="Inside the McLaren Dental Associates office in Midland, Michigan" />
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+           poster="assets/office.webp" aria-label="McLaren Dental Associates office exterior">
+      <source src="assets/hero.mp4" type="video/mp4" />
+      <!-- Graceful fallback if the browser cannot play the video -->
+      <img src="assets/office.webp" alt="McLaren Dental Associates office in Midland, Michigan" />
+    </video>
     <div class="hero-accepting"><span class="d"></span> Now accepting new patients</div>
     <div class="hero-overlay">
       <div class="wrap hero-overlay-inner">

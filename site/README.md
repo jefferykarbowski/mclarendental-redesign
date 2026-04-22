@@ -22,14 +22,15 @@ site/
   assets/
     logo-mark.png   # Real logo — pulled from live site
     logo-white.png  # Real white wordmark — pulled from live site
-    office.webp     # Real office still — pulled from live site video poster
+    hero.mp4        # Real hero video — autoplay, muted, looped (~40 MB)
+    office.webp     # Real office still — used as video poster and fallback
   README.md
 ```
 
 ## What was pulled from the live site
 
 - **Business name, logo, and white-wordmark** (real assets from `mclarendental.com/wp-content/uploads/...`)
-- **Office interior photo** (real still from the live site's homepage video poster)
+- **Hero video** (real exterior/interior b-roll pulled from the live site's homepage) with the office still as poster and fallback for browsers that can't autoplay
 - **Real phone number:** (989) 631-7880
 - **Real address:** 308 Northgate Drive, Midland, MI 48640
 - **Real office hours:** Mon–Wed 8:00 am – 5:30 pm, Thu–Fri 8:00 am – 4:30 pm, Sat & Sun closed
