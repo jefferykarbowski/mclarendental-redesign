@@ -107,7 +107,9 @@ button{font-family:inherit;cursor:pointer;border:0;background:0}
 .hero-media-full{position:relative;width:100%;height:min(88vh,820px);min-height:600px;overflow:hidden}
 .hero-media-full img,
 .hero-media-full .hero-video{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
-.hero-video{background:var(--navy)}
+.hero-still{position:absolute;inset:0;z-index:1}
+.hero-video{position:absolute;inset:0;z-index:2;background:var(--navy);transition:opacity 1.2s ease}
+.hero-media-full.video-ended .hero-video{opacity:0;pointer-events:none}
 .hero-media-full::after{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:

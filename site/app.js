@@ -5,6 +5,16 @@
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10));
 
+// ---------- Hero video → fade to poster when finished ----------
+(function heroVideoToPoster(){
+  const video = document.getElementById('heroVideo');
+  const media = document.getElementById('heroMedia');
+  if (!video || !media) return;
+  video.addEventListener('ended', () => media.classList.add('video-ended'));
+  // If the browser blocks autoplay or the source fails, reveal the poster immediately.
+  video.addEventListener('error', () => media.classList.add('video-ended'));
+})();
+
 // ---------- Today-aware hours / utility bar ----------
 // Hours (24h): Mon–Wed 08:00–17:30, Thu–Fri 08:00–16:30, Sat/Sun closed
 const HOURS = {

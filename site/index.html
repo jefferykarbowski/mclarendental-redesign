@@ -54,12 +54,12 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-media-full">
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata"
-           poster="assets/office.webp" aria-label="McLaren Dental Associates office exterior">
+  <div class="hero-media-full" id="heroMedia">
+    <!-- Still image is beneath the video; revealed after the video finishes playing -->
+    <img class="hero-still" src="assets/office.webp" alt="McLaren Dental Associates office in Midland, Michigan" />
+    <video class="hero-video" id="heroVideo" autoplay muted playsinline preload="metadata"
+           poster="assets/office.webp" aria-hidden="true">
       <source src="assets/hero.mp4" type="video/mp4" />
-      <!-- Graceful fallback if the browser cannot play the video -->
-      <img src="assets/office.webp" alt="McLaren Dental Associates office in Midland, Michigan" />
     </video>
     <div class="hero-accepting"><span class="d"></span> Now accepting new patients</div>
     <!-- Triangle wedge transitioning hero into the next section (matches live-site motif) -->
