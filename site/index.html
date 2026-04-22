@@ -17,7 +17,6 @@
 <div class="util">
   <div class="wrap">
     <div class="left">
-      <span><span class="dot"></span>Accepting new patients</span>
       <span id="utilHours">Open today</span>
     </div>
     <div class="right">
@@ -190,6 +189,30 @@
   </div>
 </section>
 
+<!-- STATS + ACCOLADES -->
+<section class="stats" aria-label="Practice at a glance">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num" data-count="25">25<span class="stat-suffix">+</span></div>
+        <div class="stat-label">Years of expertise</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="1000">1,000<span class="stat-suffix">+</span></div>
+        <div class="stat-label">Positive feedback</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="10000">10,000<span class="stat-suffix">+</span></div>
+        <div class="stat-label">Trusting patients</div>
+      </div>
+      <div class="stat stat-accolades">
+        <img src="assets/accolades/invisalign-diamond-plus.webp" alt="Invisalign Diamond Top 1% Provider" loading="lazy" />
+        <img src="assets/accolades/accolade-2.png" alt="Midland Daily News 2025 Readers' Choice Awards" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROVIDERS -->
 <section class="sec" id="providers" style="padding-top:0">
   <div class="wrap">
@@ -312,25 +335,32 @@
       <h2>Great dentistry shouldn't be <em>complicated</em>.</h2>
       <p>We file insurance claims on your behalf and partner with CareCredit®, HFD, and Sunbit for flexible monthly payment options when you need them.</p>
     </div>
+    <div class="ppo-line">
+      <span class="smallcaps">PPO providers for</span>
+      <span class="ppo-names"><b>Connection</b> <span class="amp">&amp;</span> <b>Careington</b></span>
+    </div>
+
+    <div class="logo-row" aria-label="Insurance plans accepted">
+      <div class="logo-tile" style="--logo:url('assets/insurers/aetna.png')" title="Aetna"></div>
+      <div class="logo-tile" style="--logo:url('assets/insurers/ins-download-8.png')" title="United Healthcare"></div>
+      <div class="logo-tile" style="--logo:url('assets/insurers/ins-unnamed-1.webp')" title="United Concordia"></div>
+      <div class="logo-tile" style="--logo:url('assets/insurers/principal.png')" title="Principal"></div>
+    </div>
+    <p class="finance-note ppo-note">Don't see your plan? Call us — we're happy to verify your benefits and let you know exactly what's covered before your visit.</p>
+
     <div class="finance-grid">
-      <div>
-        <div class="smallcaps" style="margin-bottom:6px">PPO providers for</div>
-        <div class="insurers">
-          <div class="insurer">Connection<small>Dental PPO</small></div>
-          <div class="insurer">Careington<small>Dental PPO</small></div>
+      <div class="financing-copy">
+        <div class="smallcaps" style="margin-bottom:10px">Flexible financing through</div>
+        <div class="logo-row logo-row-sm">
+          <div class="logo-tile" style="--logo:url('assets/financing/fin-styleguide-cc.png')" title="CareCredit"></div>
+          <div class="logo-tile" style="--logo:url('assets/financing/fin-download.png')" title="HFD"></div>
+          <div class="logo-tile" style="--logo:url('assets/financing/fin-images-1.png')" title="Sunbit"></div>
         </div>
-        <div class="smallcaps" style="margin:28px 0 6px">Also accepted</div>
-        <div class="insurers">
-          <div class="insurer">Aetna<small>Dental</small></div>
-          <div class="insurer">United Healthcare<small>Dental</small></div>
-          <div class="insurer">United Concordia<small>Dental</small></div>
-          <div class="insurer">Principal<small>Dental</small></div>
-        </div>
-        <p class="finance-note">Don't see your plan? Call us — we're happy to verify your benefits and let you know exactly what's covered before your visit.</p>
+        <p class="finance-note" style="margin-top:18px">Break treatment costs into manageable monthly payments through <b>CareCredit®</b>, <b>HFD</b>, or <b>Sunbit</b>. Ask our team for details and eligibility.</p>
       </div>
       <div class="calc">
         <h4>Financing estimator</h4>
-        <p class="calc-sub">Estimate monthly payments for larger treatment via CareCredit®, HFD, or Sunbit.</p>
+        <p class="calc-sub">Estimate monthly payments for larger treatment.</p>
         <div class="row">
           <div class="amt"><label>Treatment cost</label><span class="v" id="calcAmt">$3,500</span></div>
           <input type="range" id="calcRange" min="500" max="15000" step="250" value="3500" aria-label="Treatment cost" />
@@ -348,7 +378,7 @@
           <span class="lbl">Est. monthly</span>
           <span class="val" id="calcVal">$292<small> / mo</small></span>
         </div>
-        <div class="finance-note" style="margin-top:14px;color:#D9CDB299">Estimate only. Actual rates and terms depend on plan and credit approval. Ask our team for details and eligibility.</div>
+        <div class="finance-note" style="margin-top:14px;color:#D9CDB299">Estimate only. Actual rates and terms depend on plan and credit approval.</div>
       </div>
     </div>
   </div>
