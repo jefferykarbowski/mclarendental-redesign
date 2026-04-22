@@ -58,7 +58,8 @@ button{font-family:inherit;cursor:pointer;border:0;background:0}
 .nav.scrolled{box-shadow:0 2px 20px -8px rgba(11,34,51,.15)}
 .nav .wrap{height:92px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:nowrap}
 .brand{display:flex;align-items:center;gap:14px;flex-shrink:0}
-.brand img{height:40px;width:auto;display:block}
+.brand img{height:52px;width:auto;display:block;max-width:280px}
+@media (max-width:560px){.brand img{height:44px;max-width:220px}}
 .brand-mark{display:inline-flex;flex-shrink:0}
 .brand-mark svg{display:block}
 .brand-text{display:flex;flex-direction:column;line-height:1;gap:3px}
