@@ -68,6 +68,12 @@
       <img src="assets/office.webp" alt="McLaren Dental Associates office in Midland, Michigan" />
     </video>
     <div class="hero-accepting"><span class="d"></span> Now accepting new patients</div>
+    <!-- Triangle wedge transitioning hero into the next section (matches live-site motif) -->
+    <svg class="hero-wedge" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+      <polygon points="0,80 720,20 1440,80" fill="var(--ivory)" opacity=".55"/>
+      <polygon points="0,80 720,40 1440,80" fill="var(--cream)" opacity=".7"/>
+      <polygon points="0,80 720,60 1440,80" fill="var(--ivory)"/>
+    </svg>
     <div class="hero-overlay">
       <div class="wrap hero-overlay-inner">
         <div class="hero-text">
@@ -199,9 +205,14 @@
       <h2>Familiar faces. <em>Exceptional</em> care.</h2>
       <p>Four experienced clinicians — each committed to ongoing education and the kind of patient-centered care that keeps families coming back.</p>
     </div>
+    <!-- DEMO: Headshot placeholders — final site will feature professional portraits of each provider. -->
     <div class="providers providers-4">
       <article class="provider">
-        <div class="photo portrait"><img src="assets/provider-john-mclaren.webp" alt="Dr. John McLaren, McLaren Dental Associates" loading="lazy" /></div>
+        <div class="photo photo-placeholder">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="24" cy="18" r="7"/><path d="M10 40c2-7 8-11 14-11s12 4 14 11"/></svg>
+          <span class="serif-label">Headshot coming soon</span>
+          <span class="dash-label">Professional portrait pending</span>
+        </div>
         <div class="meta">
           <div class="creds">B.S.E., D.D.S., M.S.</div>
           <h4>Dr. John McLaren</h4>
@@ -210,7 +221,11 @@
         </div>
       </article>
       <article class="provider">
-        <div class="photo portrait"><img src="assets/provider-charles-mclaren.webp" alt="Dr. Charles McLaren, McLaren Dental Associates" loading="lazy" /></div>
+        <div class="photo photo-placeholder">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="24" cy="18" r="7"/><path d="M10 40c2-7 8-11 14-11s12 4 14 11"/></svg>
+          <span class="serif-label">Headshot coming soon</span>
+          <span class="dash-label">Professional portrait pending</span>
+        </div>
         <div class="meta">
           <div class="creds">B.S.E., D.D.S., M.S. — Restorative Dentistry</div>
           <h4>Dr. Charles McLaren</h4>
@@ -219,7 +234,11 @@
         </div>
       </article>
       <article class="provider">
-        <div class="photo portrait"><img src="assets/provider-melissa-janos.webp" alt="Dr. Melissa Janos, McLaren Dental Associates" loading="lazy" /></div>
+        <div class="photo photo-placeholder">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="24" cy="18" r="7"/><path d="M10 40c2-7 8-11 14-11s12 4 14 11"/></svg>
+          <span class="serif-label">Headshot coming soon</span>
+          <span class="dash-label">Professional portrait pending</span>
+        </div>
         <div class="meta">
           <div class="creds">B.S., D.D.S.</div>
           <h4>Dr. Melissa Janos</h4>
@@ -228,8 +247,11 @@
         </div>
       </article>
       <article class="provider">
-        <!-- DEMO: Dr. Moody has no headshot on the live site — keep the monogram until one is provided. -->
-        <div class="photo mono"><span class="initials">DM</span><span class="lbl">Headshot pending</span></div>
+        <div class="photo photo-placeholder">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="24" cy="18" r="7"/><path d="M10 40c2-7 8-11 14-11s12 4 14 11"/></svg>
+          <span class="serif-label">Headshot coming soon</span>
+          <span class="dash-label">Professional portrait pending</span>
+        </div>
         <div class="meta">
           <div class="creds">B.S., D.D.S.</div>
           <h4>Dr. Devan Moody</h4>
@@ -243,6 +265,12 @@
 
 <!-- WHY US -->
 <section class="why sec" id="why">
+  <!-- Incoming wedge: ivory above → navy here -->
+  <svg class="section-wedge section-wedge-top" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="0,0 720,64 1440,0" fill="var(--ivory)" opacity=".15"/>
+    <polygon points="0,0 720,44 1440,0" fill="var(--ivory)" opacity=".25"/>
+    <polygon points="0,0 720,24 1440,0" fill="var(--ivory)" opacity=".4"/>
+  </svg>
   <div class="wrap">
     <div class="sec-intro">
       <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
@@ -273,6 +301,12 @@
       </div>
     </div>
   </div>
+  <!-- Outgoing wedge: navy here → ivory below -->
+  <svg class="section-wedge section-wedge-bottom" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="0,64 720,0 1440,64" fill="var(--ivory)" opacity=".4"/>
+    <polygon points="0,64 720,20 1440,64" fill="var(--ivory)" opacity=".25"/>
+    <polygon points="0,64 720,40 1440,64" fill="var(--ivory)" opacity=".15"/>
+  </svg>
 </section>
 
 <!-- INSURANCE / FINANCING -->
@@ -494,7 +528,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="assets/logo-white.png" alt="McLaren Dental Associates" />
+        <img src="assets/logo-dark.png" alt="McLaren Dental Associates" />
         <p>A family and cosmetic dental office located in Midland, Michigan. Quality, affordable, and personalized dental care for people of all ages.</p>
         <div class="foot-social">
           <a href="https://www.facebook.com/McLarenDentalMidland" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7c0-1 1-2 2-2h2V1h-3c-3 0-5 2-5 5v4H6v4h3v8z"/></svg></a>

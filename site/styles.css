@@ -210,23 +210,26 @@ button{font-family:inherit;cursor:pointer;border:0;background:0}
     linear-gradient(180deg, rgba(11,34,51,.05), rgba(11,34,51,.25)),
     var(--cream-2);
 }
-.provider .photo.mono{
-  background:linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
-  display:flex;align-items:center;justify-content:center;
-}
-.provider .photo.mono .initials{
-  font-family:'Cormorant Garamond',serif;font-weight:500;font-size:72px;letter-spacing:.04em;
-  color:var(--gold);text-shadow:0 2px 20px rgba(0,0,0,.3)
-}
-.provider .photo.portrait{
+.provider .photo.photo-placeholder{
   background:
-    radial-gradient(circle at 50% 40%, rgba(201,162,75,.08) 0%, transparent 55%),
-    linear-gradient(165deg, var(--cream) 0%, var(--cream-2) 100%);
-  display:flex;align-items:flex-end;justify-content:center;padding:8%;
+    radial-gradient(circle at 50% 35%, rgba(201,162,75,.09) 0%, transparent 55%),
+    linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;
+  border:1px solid rgba(201,162,75,.12);
 }
-.provider .photo.portrait img{
-  width:100%;height:auto;max-height:100%;object-fit:contain;display:block;
-  filter:drop-shadow(0 6px 18px rgba(11,34,51,.18));
+.provider .photo.photo-placeholder .ic{width:52px;height:52px;color:var(--gold);opacity:.75}
+.provider .photo.photo-placeholder .ic svg{width:100%;height:100%}
+.provider .photo.photo-placeholder .serif-label{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:18px;
+  color:#F0E8D6;letter-spacing:.01em;text-align:center
+}
+.provider .photo.photo-placeholder .dash-label{
+  font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600;
+  display:flex;align-items:center;gap:10px;
+}
+.provider .photo.photo-placeholder .dash-label::before,
+.provider .photo.photo-placeholder .dash-label::after{
+  content:"";width:16px;height:1px;background:rgba(201,162,75,.45);display:inline-block
 }
 .provider .photo .lbl{
   position:absolute;left:14px;top:14px;font-family:'JetBrains Mono',monospace;font-size:10px;
@@ -378,21 +381,21 @@ button{font-family:inherit;cursor:pointer;border:0;background:0}
 .cta-band .actions{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
 @media (max-width:800px){.cta-band{grid-template-columns:1fr;padding:44px 28px}}
 
-/* FOOTER */
-footer{background:var(--navy-dk);color:#C9BFA6;padding:80px 0 28px;margin-top:0}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:52px;border-bottom:1px solid #ffffff14}
-.foot-brand img{height:40px;margin-bottom:20px;filter:brightness(1.05)}
-.foot-brand p{color:#A89E83;font-size:13.5px;max-width:34ch;margin:0 0 24px;line-height:1.7}
+/* FOOTER (light panel so the official dark-diamond logo reads) */
+footer{background:var(--ivory);color:var(--ink-60);padding:80px 0 28px;margin-top:0;border-top:1px solid var(--rule)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:52px;border-bottom:1px solid var(--rule)}
+.foot-brand img{height:52px;margin-bottom:20px;width:auto}
+.foot-brand p{color:var(--ink-60);font-size:13.5px;max-width:34ch;margin:0 0 24px;line-height:1.7}
 .foot-social{display:flex;gap:8px}
-.foot-social a{width:38px;height:38px;border-radius:50%;border:1px solid #ffffff22;display:grid;place-items:center;color:#C9BFA6;transition:all .15s}
-.foot-social a:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-dk)}
-.foot-col h5{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--gold);margin:0 0 18px;font-weight:500;letter-spacing:.02em}
-.foot-col a,.foot-col li{display:block;font-size:13.5px;color:#C9BFA6cc;padding:5px 0}
-.foot-col a:hover{color:#F7F1E6}
+.foot-social a{width:38px;height:38px;border-radius:50%;border:1px solid var(--rule-2);display:grid;place-items:center;color:var(--navy);transition:all .15s;background:#fff}
+.foot-social a:hover{background:var(--navy);border-color:var(--navy);color:var(--gold)}
+.foot-col h5{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--red);margin:0 0 18px;font-weight:500;letter-spacing:.02em}
+.foot-col a,.foot-col li{display:block;font-size:13.5px;color:var(--ink-60);padding:5px 0}
+.foot-col a:hover{color:var(--navy)}
 .foot-col ul{list-style:none;padding:0;margin:0}
-.foot-bottom{padding-top:24px;display:flex;justify-content:space-between;color:#8A7F65;font-size:12px;flex-wrap:wrap;gap:10px}
-.foot-bottom a{color:#8A7F65}
-.foot-bottom a:hover{color:#F7F1E6}
+.foot-bottom{padding-top:24px;display:flex;justify-content:space-between;color:var(--ink-45);font-size:12px;flex-wrap:wrap;gap:10px}
+.foot-bottom a{color:var(--ink-45)}
+.foot-bottom a:hover{color:var(--navy)}
 @media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
 @media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
 
@@ -447,3 +450,21 @@ footer{background:var(--navy-dk);color:#C9BFA6;padding:80px 0 28px;margin-top:0}
 .drawer .panel h6{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--red);margin:20px 0 6px;font-weight:500}
 .drawer .panel a{padding:14px 0;font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--navy);border-bottom:1px solid var(--rule);letter-spacing:-.01em;font-weight:500}
 .drawer .close{align-self:flex-end;width:36px;height:36px;border:1px solid var(--rule-2);border-radius:50%;display:grid;place-items:center;margin-bottom:8px;background:#fff;font-size:18px;line-height:1}
+
+/* ---------- TRIANGLE / WEDGE SECTION DIVIDERS ---------- */
+/* Subtle angular transitions inspired by the live site's triangle motif,
+   reworked in the brand's cream/navy/gold palette. */
+.hero-wedge{
+  position:absolute;left:0;right:0;bottom:0;width:100%;height:70px;z-index:3;pointer-events:none;display:block
+}
+.why{position:relative}
+.section-wedge{
+  position:absolute;left:0;right:0;width:100%;height:56px;z-index:1;pointer-events:none;display:block
+}
+.section-wedge-top{top:0}
+.section-wedge-bottom{bottom:0}
+.why .wrap{position:relative;z-index:2}
+@media (max-width:720px){
+  .hero-wedge{height:40px}
+  .section-wedge{height:32px}
+}
