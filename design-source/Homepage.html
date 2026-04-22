@@ -1,0 +1,1265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>McLaren Dental Associates — Midland, Michigan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --navy:#0B2233;              /* deep navy from logo plate */
+    --navy-2:#143247;
+    --navy-dk:#061724;
+    --ink:#13202C;
+    --ink-60:#13202C99;
+    --ink-45:#13202C73;
+    --red:#A42A2A;               /* building red, muted for UI */
+    --red-deep:#7C1F1F;
+    --gold:#C9A24B;              /* subtle classic gold accent */
+    --ivory:#F7F1E6;             /* warm cream bg */
+    --cream:#EEE5D3;
+    --cream-2:#E4D7BE;
+    --rule:#E1D5BB;
+    --rule-2:#D0BF9D;
+    --white:#FDFBF5;
+    --shadow: 0 1px 2px rgba(11,34,51,.05), 0 24px 50px -24px rgba(11,34,51,.22);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);background:var(--ivory);
+    -webkit-font-smoothing:antialiased;font-size:16px;line-height:1.6;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:0;background:0}
+
+  .serif{font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:-.005em}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+
+  .eyebrow{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;
+    font-size:16px;color:var(--red);letter-spacing:.02em;display:inline-flex;align-items:center;gap:14px;
+  }
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--red);display:inline-block}
+
+  .smallcaps{
+    font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--ink-60)
+  }
+
+  .wrap{max-width:1280px;margin:0 auto;padding:0 36px}
+  @media (max-width:720px){ .wrap{padding:0 20px} }
+
+  /* ---------- TOP UTILITY BAR ---------- */
+  .util{background:var(--navy-dk);color:#D9E3EC;font-size:12.5px;border-bottom:1px solid #ffffff0a}
+  .util .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:24px}
+  .util .left,.util .right{display:flex;gap:26px;align-items:center}
+  .util .right a{transition:color .15s}
+  .util .right a:hover{color:#fff}
+  .util .dot{width:6px;height:6px;border-radius:50%;background:#8FD4A8;box-shadow:0 0 0 3px #8FD4A833;display:inline-block;margin-right:8px}
+  @media (max-width:820px){ .util .left{display:none} .util .wrap{justify-content:center} }
+
+  /* ---------- NAV ---------- */
+  .nav{background:var(--ivory);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:40;transition:box-shadow .2s}
+  .nav.scrolled{box-shadow:0 2px 20px -8px rgba(11,34,51,.15)}
+  .nav .wrap{height:92px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:nowrap}
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+  .brand img{height:44px;width:auto;display:block}
+  .nav-links{display:flex;gap:30px;align-items:center;flex-wrap:nowrap;white-space:nowrap}
+  .nav-links a{font-size:13.5px;font-weight:500;color:var(--ink);position:relative;padding:6px 0;transition:color .15s;white-space:nowrap}
+  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+  .nav-links a:hover{color:var(--red)}
+  .nav-links a:hover::after{transform:scaleX(1)}
+  .nav-cta{display:flex;gap:10px;align-items:center;flex-shrink:0;flex-wrap:nowrap;white-space:nowrap}
+  .menu-btn{display:none;width:44px;height:44px;border:1px solid var(--rule-2);border-radius:4px;align-items:center;justify-content:center;background:#fff}
+  @media (max-width:1000px){
+    .nav-links{display:none}
+    .menu-btn{display:flex}
+    .nav .wrap{height:78px}
+    .nav-cta .btn-ghost{display:none}
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 26px;border-radius:2px;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+    transition:all .2s ease;white-space:nowrap;
+  }
+  .btn-primary{background:var(--red);color:#fff}
+  .btn-primary:hover{background:var(--red-deep);transform:translateY(-1px);box-shadow:0 10px 24px -10px rgba(164,42,42,.55)}
+  .btn-navy{background:var(--navy);color:#F7F1E6}
+  .btn-navy:hover{background:var(--navy-2);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--navy)}
+  .btn-ghost:hover{background:var(--navy);color:var(--ivory)}
+  .btn-light{background:transparent;color:#fff;border:1px solid #ffffff44}
+  .btn-light:hover{background:#fff;color:var(--navy);border-color:#fff}
+  .btn svg{width:14px;height:14px}
+  .btn-sm{padding:11px 18px;font-size:11.5px;letter-spacing:.14em}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;background:var(--navy);color:#F0E8D6;padding:0;overflow:hidden}
+  .hero-media-full{position:relative;width:100%;height:min(88vh,820px);min-height:600px;overflow:hidden}
+  .hero-media-full img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+  .hero-media-full::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(90deg, rgba(6,23,36,.88) 0%, rgba(6,23,36,.7) 35%, rgba(6,23,36,.35) 60%, rgba(6,23,36,.15) 100%),
+      linear-gradient(180deg, rgba(6,23,36,.35) 0%, transparent 30%, transparent 60%, rgba(6,23,36,.55) 100%);
+  }
+  .hero-overlay{position:absolute;inset:0;display:flex;align-items:center;z-index:2}
+  .hero-overlay-inner{width:100%}
+  .hero-text{max-width:640px;color:#F0E8D6;position:relative}
+  .hero-text .eyebrow{color:var(--gold)}
+  .hero-text .eyebrow::before{background:var(--gold)}
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;font-weight:500;
+    font-size:clamp(44px,5.6vw,82px);line-height:.98;letter-spacing:-.015em;margin:18px 0 24px;color:#F7F1E6;
+    text-shadow:0 2px 30px rgba(0,0,0,.3);
+  }
+  .hero h1 em{font-style:italic;font-weight:400;color:#E4D7BE}
+  .hero h1 .rule{display:inline-block;width:48px;height:1px;background:var(--gold);vertical-align:middle;margin:0 6px 14px 0}
+  .hero-sub{font-size:17px;color:#E8DDC4;max-width:48ch;margin:0 0 36px;line-height:1.6;text-shadow:0 1px 20px rgba(0,0,0,.4)}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .hero-meta{display:grid;grid-template-columns:repeat(3,auto);gap:40px;margin-top:52px;padding-top:32px;border-top:1px solid #ffffff2a;max-width:580px}
+  .hero-meta div .k{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px}
+  .hero-meta div .v{font-family:'Cormorant Garamond',serif;font-size:19px;color:#F0E8D6;font-weight:500;letter-spacing:-.01em}
+  .hero-accepting{
+    position:absolute;top:28px;right:28px;z-index:3;display:inline-flex;align-items:center;gap:10px;
+    background:#0B2233bf;backdrop-filter:blur(10px);color:#F0E8D6;padding:10px 16px;border-radius:999px;font-size:12.5px;border:1px solid #ffffff1f
+  }
+  .hero-accepting .d{width:7px;height:7px;border-radius:50%;background:#8FD4A8;box-shadow:0 0 0 3px #8FD4A833}
+  .hero-video-note{position:absolute;bottom:24px;right:28px;z-index:3;font-family:'JetBrains Mono',monospace;font-size:10.5px;background:#0B2233bf;backdrop-filter:blur(6px);color:#E4D7BE;padding:6px 12px;border-radius:2px;letter-spacing:.06em;text-transform:uppercase;border-left:2px solid var(--gold)}
+
+  @media (max-width:960px){
+    .hero-media-full{height:auto;min-height:unset}
+    .hero-media-full img{height:360px}
+    .hero-media-full::after{background:linear-gradient(180deg, rgba(6,23,36,.5) 0%, rgba(6,23,36,.2) 40%, rgba(6,23,36,.95) 100%)}
+    .hero-overlay{position:relative;padding:40px 0 60px;background:var(--navy)}
+    .hero-meta{grid-template-columns:1fr 1fr;gap:24px}
+    .hero-video-note{bottom:auto;top:68px}
+  }
+
+  /* ---------- TRUST BELT ---------- */
+  .belt{background:var(--ivory);border-bottom:1px solid var(--rule)}
+  .belt .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .belt-item{padding:40px 32px;border-left:1px solid var(--rule);display:flex;gap:18px;align-items:flex-start}
+  .belt-item:first-child{border-left:0}
+  .belt-item .ic{width:36px;height:36px;color:var(--red);flex-shrink:0}
+  .belt-item .ic svg{width:100%;height:100%}
+  .belt-item .k{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--navy);letter-spacing:-.01em;font-weight:500;line-height:1.1;margin-bottom:4px}
+  .belt-item .v{font-size:12.5px;color:var(--ink-60);line-height:1.5}
+  @media (max-width:900px){.belt .wrap{grid-template-columns:1fr 1fr}.belt-item{border-left:0;border-top:1px solid var(--rule);padding:24px 0}.belt-item:nth-child(2){border-top:1px solid var(--rule)}.belt-item:nth-child(odd){border-right:1px solid var(--rule);padding-right:20px}.belt-item:nth-child(even){padding-left:20px}}
+
+  /* ---------- GENERIC SECTION ---------- */
+  .sec{padding:120px 0}
+  .sec-intro{text-align:center;max-width:720px;margin:0 auto 64px}
+  .sec-intro h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(38px,4vw,58px);color:var(--navy);margin:14px 0 16px;letter-spacing:-.02em;line-height:1.05}
+  .sec-intro h2 em{font-style:italic;color:var(--red);font-weight:400}
+  .sec-intro p{color:var(--ink-60);font-size:16px;max-width:56ch;margin:0 auto}
+  .ornament{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin-bottom:4px}
+  .ornament::before,.ornament::after{content:"";width:40px;height:1px;background:var(--rule-2)}
+  .ornament svg{width:14px;height:14px;transform:rotate(45deg)}
+
+  /* ---------- SERVICES ---------- */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .svc{
+    background:var(--ivory);padding:40px 36px 36px;display:flex;flex-direction:column;min-height:280px;
+    position:relative;transition:all .25s ease;cursor:pointer
+  }
+  .svc:hover{background:#fff}
+  .svc .num{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--red);font-size:15px;margin-bottom:20px;letter-spacing:.02em}
+  .svc h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:28px;margin:0 0 10px;color:var(--navy);letter-spacing:-.01em;line-height:1.1}
+  .svc p{font-size:14px;color:var(--ink-60);margin:0 0 22px;line-height:1.6}
+  .svc .svc-link{margin-top:auto;font-size:11.5px;font-weight:600;color:var(--navy);letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;padding-top:18px;border-top:1px solid var(--rule)}
+  .svc .svc-link::after{content:"→";transition:transform .2s}
+  .svc:hover .svc-link::after{transform:translateX(4px)}
+  .svc:hover .svc-link{color:var(--red)}
+  @media (max-width:900px){.services{grid-template-columns:1fr}}
+
+  /* ---------- ABOUT / PROVIDERS ---------- */
+  .about{background:var(--cream)}
+  .about-split{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+  .about-img{
+    position:relative;aspect-ratio:4/5;border-radius:2px;overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(11,34,51,.1), rgba(11,34,51,.35)),
+      repeating-linear-gradient(125deg, #b8a780 0 3px, #c4b38e 3px 22px),
+      var(--cream-2);
+  }
+  .about-img .lbl{position:absolute;top:14px;right:14px;font-family:'JetBrains Mono',monospace;font-size:10.5px;background:#ffffffd6;padding:6px 10px;border-radius:2px;color:var(--ink-60);letter-spacing:.08em;text-transform:uppercase}
+  .about-img .est{position:absolute;left:24px;bottom:24px;background:var(--navy);color:#F0E8D6;padding:18px 22px;border-radius:2px;border-left:2px solid var(--gold)}
+  .about-img .est .serif{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--gold)}
+  .about-img .est .big{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:38px;line-height:1;letter-spacing:-.02em;margin-top:2px}
+  .about-img .est .s{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#ffffffaa;margin-top:6px}
+  .about-text h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(38px,4vw,54px);color:var(--navy);margin:14px 0 22px;letter-spacing:-.02em;line-height:1.05}
+  .about-text h2 em{font-style:italic;color:var(--red);font-weight:400}
+  .about-text p{font-size:16px;color:var(--ink);line-height:1.7;margin:0 0 18px;max-width:54ch}
+  .about-text .sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:var(--navy);margin-top:24px;letter-spacing:-.01em}
+  .about-text .sig-name{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-60);font-family:'Inter',sans-serif;font-style:normal;margin-top:2px;font-weight:600}
+  @media (max-width:900px){.about-split{grid-template-columns:1fr;gap:40px}}
+
+  /* ---------- PROVIDERS LIST ---------- */
+  .providers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+  .provider{text-align:left}
+  .provider .photo{
+    aspect-ratio: 4/5;position:relative;border-radius:2px;overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(11,34,51,.05), rgba(11,34,51,.25)),
+      repeating-linear-gradient(135deg, #cbbea3 0 3px, #d5c8ae 3px 18px),
+      var(--cream-2);
+  }
+  .provider .photo .lbl{
+    position:absolute;left:14px;top:14px;font-family:'JetBrains Mono',monospace;font-size:10.5px;
+    background:#ffffffd6;padding:5px 9px;border-radius:2px;color:var(--ink-60);letter-spacing:.06em;text-transform:uppercase
+  }
+  .provider .meta{padding:22px 4px 0}
+  .provider .creds{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--red);margin-bottom:2px}
+  .provider h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:28px;color:var(--navy);margin:0 0 4px;letter-spacing:-.015em;line-height:1.05}
+  .provider .role{font-size:12px;color:var(--ink-60);text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px;font-weight:600}
+  .provider .bio{font-size:14px;color:var(--ink-60);line-height:1.6;border-top:1px solid var(--rule);padding-top:14px}
+  @media (max-width:900px){.providers{grid-template-columns:1fr}}
+
+  /* ---------- WHY US TABS ---------- */
+  .why{background:var(--navy);color:#F0E8D6;position:relative;overflow:hidden}
+  .why::before{content:"";position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle, rgba(201,162,75,.08), transparent 60%)}
+  .why .sec-intro h2{color:#F7F1E6}
+  .why .sec-intro h2 em{color:var(--gold)}
+  .why .sec-intro p{color:#D9CDB2}
+  .why .ornament::before,.why .ornament::after{background:#ffffff2a}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#ffffff14;border:1px solid #ffffff14;margin-top:40px}
+  .why-item{background:var(--navy);padding:36px 32px;position:relative;transition:background .25s}
+  .why-item:hover{background:var(--navy-2)}
+  .why-ic{width:44px;height:44px;color:var(--gold);margin-bottom:24px}
+  .why-ic svg{width:100%;height:100%}
+  .why-item h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;color:#F7F1E6;margin:0 0 10px;letter-spacing:-.01em;line-height:1.1}
+  .why-item p{font-size:14px;color:#D9CDB2cc;line-height:1.6;margin:0}
+  @media (max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.why-grid{grid-template-columns:1fr}}
+
+  /* ---------- INSURANCE / FINANCING ---------- */
+  .finance-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+  .insurers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:30px 0 18px}
+  .insurer{
+    background:#fff;border:1px solid var(--rule);border-radius:2px;padding:18px 14px;
+    font-family:'Cormorant Garamond',serif;font-weight:500;font-size:18px;color:var(--navy);text-align:center;letter-spacing:-.01em;line-height:1.1
+  }
+  .insurer small{display:block;font-family:'Inter',sans-serif;font-size:10px;color:var(--ink-60);font-weight:500;text-transform:uppercase;letter-spacing:.12em;margin-top:4px}
+  .finance-note{font-size:13px;color:var(--ink-60)}
+  .calc{background:var(--navy);color:#F0E8D6;border-radius:2px;padding:32px;border-top:3px solid var(--red)}
+  .calc h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;color:#F7F1E6;margin:0 0 4px;letter-spacing:-.01em}
+  .calc .calc-sub{font-size:13px;color:#D9CDB2aa;margin-bottom:24px}
+  .calc label{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#A48B5D;display:block;margin-bottom:12px;font-weight:600}
+  .calc .row{margin-bottom:22px}
+  .calc .amt{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+  .calc .amt .v{font-family:'Cormorant Garamond',serif;font-size:28px;color:#F7F1E6;letter-spacing:-.02em}
+  .calc input[type=range]{width:100%;accent-color:var(--gold)}
+  .calc .segs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+  .calc .seg{padding:11px 6px;border:1px solid #ffffff1f;background:transparent;color:#F7F1E6;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:all .15s;border-radius:2px}
+  .calc .seg:hover{border-color:#ffffff55}
+  .calc .seg.active{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+  .calc .result{margin-top:22px;padding-top:22px;border-top:1px solid #ffffff1f;display:flex;justify-content:space-between;align-items:baseline}
+  .calc .result .lbl{font-size:11px;color:#A48B5D;text-transform:uppercase;letter-spacing:.16em;font-weight:600}
+  .calc .result .val{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold);letter-spacing:-.02em;line-height:1}
+  .calc .result .val small{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:#D9CDB2aa;letter-spacing:0}
+  @media (max-width:900px){.finance-grid{grid-template-columns:1fr}.insurers{grid-template-columns:repeat(2,1fr)}}
+
+  /* ---------- BEFORE / AFTER ---------- */
+  .ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .ba{background:#fff;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+  .ba-img{position:relative;aspect-ratio:4/3;background:linear-gradient(90deg, #c8b890 50%, #d5c8ae 50%);overflow:hidden}
+  .ba-img::before,.ba-img::after{content:"";position:absolute;top:0;bottom:0;width:50%;background:repeating-linear-gradient(135deg, rgba(0,0,0,.05) 0 2px, transparent 2px 14px)}
+  .ba-img::before{left:0}
+  .ba-img::after{right:0}
+  .ba-divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--ivory);z-index:2;transform:translateX(-50%)}
+  .ba-handle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--ivory);display:grid;place-items:center;box-shadow:0 4px 18px rgba(0,0,0,.3);z-index:3;color:var(--navy);font-weight:700}
+  .ba-lbl{position:absolute;top:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;padding:5px 12px;background:#ffffffe6;color:var(--navy);z-index:2;letter-spacing:.02em}
+  .ba-lbl.before{left:14px}
+  .ba-lbl.after{right:14px;background:var(--navy);color:var(--gold)}
+  .ba-meta{padding:22px 24px 24px}
+  .ba-meta h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--navy);margin:0 0 4px;letter-spacing:-.01em}
+  .ba-meta p{font-size:13.5px;color:var(--ink-60);margin:0}
+  @media (max-width:900px){.ba-grid{grid-template-columns:1fr}}
+
+  /* ---------- WHAT TO EXPECT ---------- */
+  .expect{background:var(--ivory)}
+  .expect-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .expect-step{padding:40px 28px;position:relative;border-left:1px solid var(--rule)}
+  .expect-step:first-child{border-left:0}
+  .expect-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:48px;color:var(--red);line-height:1;margin-bottom:24px;letter-spacing:-.02em}
+  .expect-step h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--navy);margin:0 0 10px;letter-spacing:-.01em;line-height:1.1}
+  .expect-step p{font-size:13.5px;color:var(--ink-60);margin:0 0 14px;line-height:1.6}
+  .expect-step time{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--red);letter-spacing:.12em;text-transform:uppercase}
+  @media (max-width:900px){.expect-grid{grid-template-columns:1fr}.expect-step{border-left:0;border-top:1px solid var(--rule)}.expect-step:first-child{border-top:0}}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .reviews{background:var(--cream)}
+  .reviews .avg{display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:8px}
+  .stars{display:inline-flex;gap:3px;color:#C9A24B;font-size:18px}
+  .reviews .avg b{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--navy);font-weight:500}
+  .reviews .avg span{font-size:12.5px;color:var(--ink-60)}
+  .tests{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .test{
+    background:var(--ivory);border:1px solid var(--rule);border-radius:2px;padding:32px 30px 26px;
+    display:flex;flex-direction:column;gap:18px;min-height:300px;position:relative
+  }
+  .test::before{content:"“";position:absolute;top:10px;right:22px;font-family:'Cormorant Garamond',serif;font-size:100px;line-height:.8;color:var(--cream-2)}
+  .test .stars{position:relative;z-index:1}
+  .test blockquote{margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;line-height:1.35;color:var(--navy);letter-spacing:-.01em;position:relative;z-index:1}
+  .test-foot{margin-top:auto;display:flex;align-items:center;gap:14px;padding-top:18px;border-top:1px solid var(--rule);position:relative;z-index:1}
+  .test-avatar{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:16px}
+  .test-foot b{font-size:14px;display:block;color:var(--ink);font-weight:600}
+  .test-foot span{font-size:12px;color:var(--ink-60)}
+  @media (max-width:900px){.tests{grid-template-columns:1fr}}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--ivory);padding:120px 0 0}
+  .contact-card{background:var(--cream);border:1px solid var(--rule);border-radius:2px;display:grid;grid-template-columns:1fr 1.1fr;overflow:hidden}
+  .contact-info{padding:64px 56px;border-right:1px solid var(--rule)}
+  .contact-info h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,3.4vw,46px);color:var(--navy);margin:14px 0 18px;letter-spacing:-.02em;line-height:1.05}
+  .contact-info h2 em{font-style:italic;color:var(--red);font-weight:400}
+  .contact-info .lede{color:var(--ink-60);font-size:15px;margin-bottom:36px;max-width:40ch}
+  .contact-rows{display:flex;flex-direction:column;gap:0;margin-bottom:28px;border-top:1px solid var(--rule-2)}
+  .c-row{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:20px 0;border-bottom:1px solid var(--rule-2)}
+  .c-row .ic{color:var(--red);margin-top:2px}
+  .c-row .k{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-60);font-weight:600;margin-bottom:6px}
+  .c-row .v{font-size:14.5px;color:var(--ink)}
+  .c-row .v b{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:20px;color:var(--navy);display:block;margin-bottom:2px;letter-spacing:-.01em}
+  .hours{display:grid;grid-template-columns:1fr auto;gap:6px 14px;font-size:14px;margin-top:6px}
+  .hours .d{color:var(--ink)}
+  .hours .h{color:var(--ink-60);font-variant-numeric:tabular-nums}
+  .hours .today .d,.hours .today .h{color:var(--red);font-weight:600}
+
+  .map{position:relative;background:var(--cream-2);min-height:200px;margin-top:8px;border-radius:2px;overflow:hidden;
+    background-image:
+      linear-gradient(90deg, #d5c8ae 1px, transparent 1px),
+      linear-gradient(0deg, #d5c8ae 1px, transparent 1px),
+      linear-gradient(90deg, #bfa97d 2px, transparent 2px);
+    background-size: 30px 30px, 30px 30px, 160px 100%;
+    background-position: 0 0, 0 0, 40% 0;
+  }
+  .map::after{content:"";position:absolute;left:40%;top:40%;width:22px;height:22px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--red);box-shadow:0 8px 20px rgba(164,42,42,.35)}
+  .map .pin-dot{position:absolute;left:calc(40% + 7px);top:calc(40% + 7px);width:8px;height:8px;border-radius:50%;background:var(--ivory);z-index:2}
+  .map .map-note{position:absolute;top:12px;left:12px;font-family:'JetBrains Mono',monospace;font-size:10.5px;background:#ffffffcc;padding:5px 9px;border-radius:2px;color:var(--ink-60);letter-spacing:.06em;text-transform:uppercase}
+
+  .contact-form{padding:64px 56px;background:var(--ivory)}
+  .contact-form h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:28px;color:var(--navy);margin:10px 0 6px;letter-spacing:-.01em}
+  .contact-form .fsub{font-size:14px;color:var(--ink-60);margin-bottom:28px;max-width:40ch}
+  .field{display:block;margin-bottom:18px}
+  .field label{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-60);font-weight:600;margin-bottom:8px}
+  .field input,.field select,.field textarea{
+    width:100%;padding:14px 14px;border:1px solid var(--rule-2);border-radius:2px;
+    font-family:inherit;font-size:14.5px;color:var(--ink);background:#fff;transition:border .15s, box-shadow .15s
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,34,51,.1)}
+  .two-up{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .svc-pills{display:flex;flex-wrap:wrap;gap:6px}
+  .pill{padding:9px 14px;border:1px solid var(--rule-2);border-radius:2px;background:#fff;font-size:12.5px;cursor:pointer;transition:all .15s;font-weight:500}
+  .pill:hover{border-color:var(--navy)}
+  .pill.active{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
+  .form-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;flex-wrap:wrap}
+  .form-foot .privacy{font-size:11.5px;color:var(--ink-60);max-width:34ch}
+  .form-success{padding:18px;background:#F3F8F4;border:1px solid #CDE6D4;border-radius:2px;color:#1F5A38;font-size:14px;margin-bottom:16px;display:none}
+  .form-success.visible{display:block}
+  @media (max-width:900px){.contact-card{grid-template-columns:1fr}.contact-info{border-right:0;border-bottom:1px solid var(--rule);padding:44px 28px}.contact-form{padding:44px 28px}}
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    margin-top:80px;background:var(--navy);color:#F0E8D6;border-top:3px solid var(--red);
+    padding:64px 56px;display:grid;grid-template-columns:1.3fr auto;gap:40px;align-items:center;position:relative;overflow:hidden
+  }
+  .cta-band::before{content:"M";position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:400px;color:#ffffff05;line-height:1}
+  .cta-band .eyebrow{color:var(--gold);position:relative;z-index:1}
+  .cta-band .eyebrow::before{background:var(--gold)}
+  .cta-band h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(26px,2.6vw,36px);color:#F7F1E6;margin:10px 0 10px;letter-spacing:-.015em;line-height:1.1;position:relative;z-index:1}
+  .cta-band p{margin:0;font-size:15px;color:#D9CDB2;position:relative;z-index:1}
+  .cta-band .actions{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+  @media (max-width:800px){.cta-band{grid-template-columns:1fr;padding:44px 28px}}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-dk);color:#C9BFA6;padding:80px 0 28px;margin-top:0}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:52px;border-bottom:1px solid #ffffff14}
+  .foot-brand img{height:48px;margin-bottom:20px}
+  .foot-brand p{color:#A89E83;font-size:13.5px;max-width:34ch;margin:0 0 24px;line-height:1.7}
+  .foot-social{display:flex;gap:8px}
+  .foot-social a{width:38px;height:38px;border-radius:50%;border:1px solid #ffffff22;display:grid;place-items:center;color:#C9BFA6;transition:all .15s}
+  .foot-social a:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-dk)}
+  .foot-col h5{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--gold);margin:0 0 18px;font-weight:500;letter-spacing:.02em}
+  .foot-col a,.foot-col li{display:block;font-size:13.5px;color:#C9BFA6cc;padding:5px 0}
+  .foot-col a:hover{color:#F7F1E6}
+  .foot-col ul{list-style:none;padding:0;margin:0}
+  .foot-bottom{padding-top:24px;display:flex;justify-content:space-between;color:#8A7F65;font-size:12px;flex-wrap:wrap;gap:10px}
+  .foot-bottom a{color:#8A7F65}
+  .foot-bottom a:hover{color:#F7F1E6}
+  @media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr;gap:32px}}
+  @media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .mobile-cta{
+    position:fixed;left:12px;right:12px;bottom:12px;z-index:50;
+    background:var(--navy);color:#F0E8D6;border-radius:2px;padding:10px 10px 10px 16px;
+    display:none;align-items:center;justify-content:space-between;gap:8px;
+    box-shadow:0 16px 40px -10px rgba(11,34,51,.6);border-top:2px solid var(--red)
+  }
+  .mobile-cta .lhs{display:flex;align-items:center;gap:10px;font-size:13px}
+  .mobile-cta .lhs .d{width:7px;height:7px;border-radius:50%;background:#8FD4A8;box-shadow:0 0 0 3px #8FD4A833}
+  .mobile-cta .actions{display:flex;gap:6px}
+  .mobile-cta .actions .btn{padding:10px 14px;font-size:11px}
+  @media (max-width:760px){.mobile-cta{display:flex} body{padding-bottom:90px} }
+
+  /* ---------- MODAL ---------- */
+  .modal-backdrop{position:fixed;inset:0;background:rgba(11,34,51,.7);backdrop-filter:blur(6px);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+  .modal-backdrop.open{display:flex}
+  .modal{
+    background:var(--ivory);border-radius:2px;max-width:560px;width:100%;padding:40px 40px 32px;
+    box-shadow:0 30px 80px -20px rgba(11,34,51,.7);position:relative;max-height:90vh;overflow:auto;
+    border-top:3px solid var(--red)
+  }
+  .modal-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--rule-2);background:#fff;display:grid;place-items:center}
+  .modal h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:32px;color:var(--navy);margin:6px 0 10px;letter-spacing:-.02em;line-height:1.05}
+  .modal .step-dots{display:flex;gap:6px;margin-bottom:10px}
+  .modal .step-dots i{width:24px;height:2px;background:var(--rule-2);display:block}
+  .modal .step-dots i.on{background:var(--red)}
+  .modal .step{display:none}
+  .modal .step.on{display:block;animation:fadeIn .25s ease}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .modal .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 4px}
+  .opt{padding:16px;border:1px solid var(--rule-2);background:#fff;border-radius:2px;text-align:left;cursor:pointer;transition:all .15s}
+  .opt:hover{border-color:var(--navy)}
+  .opt.active{border-color:var(--red);background:#fff;box-shadow:0 0 0 2px rgba(164,42,42,.15)}
+  .opt b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:18px;color:var(--navy);margin-bottom:3px;letter-spacing:-.01em}
+  .opt span{font-size:12.5px;color:var(--ink-60)}
+  .modal-foot{display:flex;justify-content:space-between;gap:10px;margin-top:22px;align-items:center;flex-wrap:wrap}
+  .modal-foot .back{font-size:13px;color:var(--ink-60)}
+  .time-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
+  .time-slot{padding:11px 6px;border:1px solid var(--rule-2);background:#fff;border-radius:2px;font-size:12.5px;cursor:pointer;font-weight:500}
+  .time-slot.active{background:var(--red);color:#fff;border-color:var(--red)}
+  .time-slot.dis{opacity:.35;cursor:not-allowed}
+
+  /* ---------- CHAT ---------- */
+  .chat-fab{position:fixed;right:24px;bottom:24px;z-index:60;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+  @media (max-width:760px){.chat-fab{bottom:90px}}
+  .chat-btn{
+    width:58px;height:58px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;
+    box-shadow:0 14px 30px -8px rgba(11,34,51,.55);transition:all .2s;position:relative;border:1px solid #ffffff1a
+  }
+  .chat-btn:hover{background:var(--navy-2);transform:scale(1.05)}
+  .chat-btn .badge{position:absolute;top:-4px;right:-4px;background:var(--red);color:#fff;font-size:11px;font-weight:700;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--ivory)}
+  .chat-panel{
+    width:340px;max-width:calc(100vw - 32px);background:var(--ivory);border-radius:2px;
+    border:1px solid var(--rule);border-top:3px solid var(--red);box-shadow:0 24px 60px -20px rgba(11,34,51,.5);
+    display:none;flex-direction:column;overflow:hidden;max-height:70vh
+  }
+  .chat-panel.open{display:flex}
+  .chat-head{background:var(--navy);color:#F0E8D6;padding:18px 20px;display:flex;align-items:center;gap:12px}
+  .chat-head .av{width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:16px}
+  .chat-head b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:17px;letter-spacing:-.01em}
+  .chat-head span{font-size:11px;color:#D9CDB2aa;display:flex;align-items:center;gap:6px}
+  .chat-head span::before{content:"";width:6px;height:6px;border-radius:50%;background:#8FD4A8}
+  .chat-body{padding:18px;flex:1;overflow:auto;display:flex;flex-direction:column;gap:10px;font-size:13.5px}
+  .msg{padding:10px 14px;border-radius:2px;max-width:85%;line-height:1.5}
+  .msg.bot{background:#fff;border:1px solid var(--rule);align-self:flex-start}
+  .msg.me{background:var(--navy);color:#F0E8D6;align-self:flex-end}
+  .chat-quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 18px 12px}
+  .chat-quick button{font-size:11.5px;padding:8px 12px;border:1px solid var(--rule-2);border-radius:2px;background:#fff;color:var(--ink);cursor:pointer;transition:all .15s;font-weight:500}
+  .chat-quick button:hover{border-color:var(--navy);background:#fff}
+  .chat-foot{padding:12px;border-top:1px solid var(--rule);display:flex;gap:8px;background:#fff}
+  .chat-foot input{flex:1;padding:10px 12px;border:1px solid var(--rule-2);border-radius:2px;font-family:inherit;font-size:13.5px}
+  .chat-foot input:focus{outline:none;border-color:var(--navy)}
+  .chat-foot button{padding:10px 16px;background:var(--red);color:#fff;border-radius:2px;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+  /* ---------- DRAWER ---------- */
+  .drawer{position:fixed;inset:0;z-index:80;display:none}
+  .drawer.open{display:block}
+  .drawer .bg{position:absolute;inset:0;background:rgba(11,34,51,.5)}
+  .drawer .panel{position:absolute;top:0;right:0;bottom:0;width:min(86vw,360px);background:var(--ivory);padding:28px;display:flex;flex-direction:column;gap:4px;animation:slideIn .25s ease;overflow:auto}
+  @keyframes slideIn{from{transform:translateX(100%)}to{transform:none}}
+  .drawer .panel h6{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--red);margin:20px 0 6px;font-weight:500}
+  .drawer .panel a{padding:14px 0;font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--navy);border-bottom:1px solid var(--rule);letter-spacing:-.01em;font-weight:500}
+  .drawer .close{align-self:flex-end;width:36px;height:36px;border:1px solid var(--rule-2);border-radius:50%;display:grid;place-items:center;margin-bottom:8px;background:#fff}
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="util">
+  <div class="wrap">
+    <div class="left">
+      <span><span class="dot"></span>Accepting new patients</span>
+      <span>Open today · 8:00 am – 7:00 pm</span>
+    </div>
+    <div class="right">
+      <a href="tel:+19898352700">(989) 835-2700</a>
+      <a href="#contact">Directions</a>
+      <a href="#" style="color:var(--gold)">Patient Portal ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <img src="assets/logo-light.webp" alt="McLaren Dental Associates" />
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#providers">Our Team</a>
+      <a href="#why">Why McLaren</a>
+      <a href="#insurance">Insurance</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+19898352700" class="btn btn-ghost btn-sm">(989) 835-2700</a>
+      <button class="btn btn-primary btn-sm" onclick="openModal()">Request Appointment</button>
+      <button class="menu-btn" onclick="toggleDrawer(true)" aria-label="Menu">
+        <svg width="20" height="14" viewBox="0 0 20 14"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.8"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-media-full">
+    <img src="assets/office.webp" alt="McLaren Dental Associates office in Midland, Michigan" />
+    <div class="hero-accepting"><span class="d"></span> Now accepting new patients</div>
+    <div class="hero-video-note">[ full-bleed video: exterior drone &amp; interior b-roll ]</div>
+    <div class="hero-overlay">
+      <div class="wrap hero-overlay-inner">
+        <div class="hero-text">
+          <span class="eyebrow">Established 1994 · Midland, Michigan</span>
+          <h1><em>Exceptional dentistry</em>,<br/><span class="rule"></span>close to home.</h1>
+          <p class="hero-sub">For three decades, Midland families have trusted McLaren Dental Associates for comprehensive, comfortable care — delivered by a team who knows you by name.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" onclick="openModal()">Request Appointment</button>
+            <a href="tel:+19898352700" class="btn btn-light">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              Call (989) 835-2700
+            </a>
+          </div>
+          <div class="hero-meta">
+            <div><div class="k">Practice since</div><div class="v">1994</div></div>
+            <div><div class="k">Providers</div><div class="v">4 clinicians</div></div>
+            <div><div class="k">Ages served</div><div class="v">All ages</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BELT -->
+<section class="belt">
+  <div class="wrap">
+    <div class="belt-item">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l9 5v6c0 5-4 9-9 9s-9-4-9-9V7l9-5z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div><div class="k">Three decades of trust</div><div class="v">Serving Midland families since 1994</div></div>
+    </div>
+    <div class="belt-item">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 2-3 4-3s3 1 3 3"/></svg></div>
+      <div><div class="k">Family practice</div><div class="v">Welcoming children, adults &amp; seniors</div></div>
+    </div>
+    <div class="belt-item">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 10h18M7 14h4"/></svg></div>
+      <div><div class="k">Most PPOs accepted</div><div class="v">Insurance filed · financing available</div></div>
+    </div>
+    <div class="belt-item">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="3"/></svg></div>
+      <div><div class="k">Modern technology</div><div class="v">Digital imaging &amp; same-day crowns</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">What we offer</span>
+      <h2>Complete care for <em>every stage</em> of life.</h2>
+      <p>From a child's first cleaning to full-mouth restoration, our team provides a complete range of services — delivered under one roof, by clinicians you'll see for years.</p>
+    </div>
+
+    <div class="services">
+      <div class="svc" onclick="openModal()">
+        <div class="num">i.</div>
+        <h3>General Dentistry</h3>
+        <p>Comprehensive exams, cleanings, fillings, and preventive care — the foundation of a healthy smile at every age.</p>
+        <span class="svc-link">Learn more</span>
+      </div>
+      <div class="svc" onclick="openModal()">
+        <div class="num">ii.</div>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Veneers, bonding, and smile design — subtle refinements or full makeovers, tailored to how you'd like to feel.</p>
+        <span class="svc-link">Book a smile consult</span>
+      </div>
+      <div class="svc" onclick="openModal()">
+        <div class="num">iii.</div>
+        <h3>Dental Implants</h3>
+        <p>Permanent, natural-feeling tooth replacement — single implants to full-arch restorations, planned with 3D imaging.</p>
+        <span class="svc-link">Learn more</span>
+      </div>
+      <div class="svc" onclick="openModal()">
+        <div class="num">iv.</div>
+        <h3>Invisalign®</h3>
+        <p>Clear, removable aligners to straighten your smile — discreet treatment with check-ins every 6–8 weeks.</p>
+        <span class="svc-link">See if you're a candidate</span>
+      </div>
+      <div class="svc" onclick="openModal()">
+        <div class="num">v.</div>
+        <h3>Teeth Whitening</h3>
+        <p>Professional in-office and take-home whitening — visibly brighter results, safer than over-the-counter kits.</p>
+        <span class="svc-link">Whitening options</span>
+      </div>
+      <div class="svc" onclick="openModal()">
+        <div class="num">vi.</div>
+        <h3>Emergency Care</h3>
+        <p>Toothache, chipped tooth, or knocked-out tooth? We reserve same-day appointments for urgent needs.</p>
+        <span class="svc-link">Call now</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about sec" id="about">
+  <div class="wrap">
+    <div class="about-split">
+      <div class="about-img">
+        <span class="lbl">[ Dr. Chen with patient · placeholder ]</span>
+        <div class="est">
+          <span class="serif">Est.</span>
+          <div class="big">1994</div>
+          <div class="s">Proudly Midland</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">A letter from our founder</span>
+        <h2>For three decades, one promise — <em>treat every patient like family</em>.</h2>
+        <p>When we opened our doors on Jefferson Avenue in 1994, Midland was a smaller town and dentistry looked very different. What hasn't changed is our approach: unhurried visits, honest recommendations, and a team that genuinely cares how you feel walking out the door.</p>
+        <p>Today, we've grown into a four-provider practice with the technology to handle almost anything in-house — but we still greet you at the front desk and remember your kids' names. That's the McLaren difference.</p>
+        <div class="sig">— Dr. Andrew Chen</div>
+        <div class="sig-name">Founder · Practice Principal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVIDERS -->
+<section class="sec" id="providers" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">Meet the team</span>
+      <h2>Familiar faces. <em>Exceptional</em> care.</h2>
+      <p>Our clinicians average 15+ years in practice and are committed to continuing education — so you benefit from current research and proven techniques.</p>
+    </div>
+    <div class="providers">
+      <article class="provider">
+        <div class="photo"><span class="lbl">[ Headshot placeholder ]</span></div>
+        <div class="meta">
+          <div class="creds">Doctor of Dental Surgery · Practice Founder</div>
+          <h4>Dr. Andrew Chen</h4>
+          <div class="role">General &amp; Restorative</div>
+          <p class="bio">Opened the practice in 1994. Passionate about conservative dentistry and mentoring the next generation of clinicians. AGD Fellow.</p>
+        </div>
+      </article>
+      <article class="provider">
+        <div class="photo"><span class="lbl">[ Headshot placeholder ]</span></div>
+        <div class="meta">
+          <div class="creds">Doctor of Dental Medicine · Certified Invisalign Provider</div>
+          <h4>Dr. Priya Natarajan</h4>
+          <div class="role">Cosmetic &amp; Implant</div>
+          <p class="bio">Focuses on smile design, veneers, and implant-supported restorations. Certified Invisalign provider since 2016.</p>
+        </div>
+      </article>
+      <article class="provider">
+        <div class="photo"><span class="lbl">[ Headshot placeholder ]</span></div>
+        <div class="meta">
+          <div class="creds">Doctor of Dental Surgery · Family Care</div>
+          <h4>Dr. Marcus Bellamy</h4>
+          <div class="role">Family &amp; Pediatric</div>
+          <p class="bio">Known for his gentle chairside manner with kids and anxious patients. Dad of three; knows a good sticker when he sees one.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why sec" id="why">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow" style="color:var(--gold)">Why patients choose us</span>
+      <h2>Care that feels as good as it <em>looks</em>.</h2>
+      <p>We've built our practice around the small, human details that turn a dental appointment into something you don't dread.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-8-4.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-8 11-8 11z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></svg></div>
+        <h4>Unhurried visits</h4>
+        <p>Extended appointment windows, warm blankets, noise-cancelling headphones, and a team that actually listens.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></div>
+        <h4>Experienced clinicians</h4>
+        <p>Providers average 15+ years in practice with 40+ hours of annual continuing education each year.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 9h18M7 14h4M15 14h2"/></svg></div>
+        <h4>Modern technology</h4>
+        <p>Digital X-rays with reduced radiation, intraoral cameras, CEREC same-day crowns, and 3D implant planning.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2v20M7 6h8a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h9"/></svg></div>
+        <h4>Transparent pricing</h4>
+        <p>Clear estimates before we begin, insurance filed for you, and flexible financing for larger treatment plans.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSURANCE / FINANCING -->
+<section class="sec" id="insurance">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">Insurance &amp; financing</span>
+      <h2>Great dentistry shouldn't be <em>complicated</em>.</h2>
+      <p>We file insurance claims on your behalf, offer in-house membership plans for the uninsured, and partner with CareCredit® for flexible monthly financing.</p>
+    </div>
+    <div class="finance-grid">
+      <div>
+        <div class="smallcaps" style="margin-bottom:6px">In-network with</div>
+        <div class="insurers">
+          <div class="insurer">Delta Dental<small>PPO / Premier</small></div>
+          <div class="insurer">BCBS of Michigan<small>Dental PPO</small></div>
+          <div class="insurer">Cigna<small>DPPO</small></div>
+          <div class="insurer">Aetna<small>PPO</small></div>
+          <div class="insurer">MetLife<small>PDP Plus</small></div>
+          <div class="insurer">Guardian<small>PPO</small></div>
+        </div>
+        <p class="finance-note">Don't see your plan? We accept most PPOs out-of-network and will verify your benefits for you — just call or mention it when you book.</p>
+      </div>
+      <div class="calc">
+        <h4>Financing estimator</h4>
+        <p class="calc-sub">Estimate monthly payments for larger treatment via CareCredit®.</p>
+        <div class="row">
+          <div class="amt"><label>Treatment cost</label><span class="v" id="calcAmt">$3,500</span></div>
+          <input type="range" id="calcRange" min="500" max="15000" step="250" value="3500" />
+        </div>
+        <div class="row">
+          <label>Repayment term</label>
+          <div class="segs" id="termSegs">
+            <button class="seg" data-m="6">6 mo</button>
+            <button class="seg active" data-m="12">12 mo</button>
+            <button class="seg" data-m="24">24 mo</button>
+            <button class="seg" data-m="60">60 mo</button>
+          </div>
+        </div>
+        <div class="result">
+          <span class="lbl">Est. monthly</span>
+          <span class="val" id="calcVal">$292<small> / mo</small></span>
+        </div>
+        <div class="finance-note" style="margin-top:14px;color:#D9CDB299">0% APR available on approved credit for qualifying 6–24 mo plans. Estimate only.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="sec" id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">Patient results</span>
+      <h2>Real smiles, <em>carefully</em> restored.</h2>
+      <p>A selection of cosmetic and restorative cases completed in our Midland office. All results shared with patient permission.</p>
+    </div>
+    <div class="ba-grid">
+      <figure class="ba">
+        <div class="ba-img"><span class="ba-lbl before">Before</span><span class="ba-lbl after">After</span><div class="ba-divider"></div><div class="ba-handle">‹›</div></div>
+        <div class="ba-meta"><h4>Porcelain Veneers · 6 units</h4><p>Closed spacing and refreshed color without orthodontics. Completed in 3 visits.</p></div>
+      </figure>
+      <figure class="ba">
+        <div class="ba-img"><span class="ba-lbl before">Before</span><span class="ba-lbl after">After</span><div class="ba-divider"></div><div class="ba-handle">‹›</div></div>
+        <div class="ba-meta"><h4>Invisalign® · 11 months</h4><p>Mild crowding and rotation corrected with clear aligners. Finished with whitening.</p></div>
+      </figure>
+      <figure class="ba">
+        <div class="ba-img"><span class="ba-lbl before">Before</span><span class="ba-lbl after">After</span><div class="ba-divider"></div><div class="ba-handle">‹›</div></div>
+        <div class="ba-meta"><h4>Implant &amp; Crown · single tooth</h4><p>Replaced a failing molar with a titanium implant and custom porcelain crown.</p></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect sec" id="expect" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">New patient visit</span>
+      <h2>What to expect, <em>start to finish</em>.</h2>
+      <p>Your first visit sets the foundation for everything that follows. Here's exactly how it goes — no surprises.</p>
+    </div>
+    <div class="expect-grid">
+      <div class="expect-step">
+        <div class="expect-num">i.</div>
+        <h4>A warm welcome</h4>
+        <p>Arrive, meet your hygienist, and take a quick office tour. We'll verify your insurance so you leave knowing exactly what's covered.</p>
+        <time>~10 min</time>
+      </div>
+      <div class="expect-step">
+        <div class="expect-num">ii.</div>
+        <h4>Gentle exam &amp; imaging</h4>
+        <p>Low-radiation digital X-rays and intraoral photos. Your dentist reviews them with you on screen — not at you.</p>
+        <time>~20 min</time>
+      </div>
+      <div class="expect-step">
+        <div class="expect-num">iii.</div>
+        <h4>Cleaning &amp; conversation</h4>
+        <p>A thorough but gentle cleaning. We'll talk through what we see and what (if anything) you might want to address.</p>
+        <time>~30 min</time>
+      </div>
+      <div class="expect-step">
+        <div class="expect-num">iv.</div>
+        <h4>Plan &amp; transparent quote</h4>
+        <p>Leave with a written plan, a clear estimate, and time to think. Nothing is pressured — treatment happens on your timeline.</p>
+        <time>~10 min</time>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="reviews sec" id="reviews">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">In patients' own words</span>
+      <h2>The kind of dentist your friends <em>recommend</em>.</h2>
+      <div class="avg" style="margin-top:16px">
+        <span class="stars">★★★★★</span>
+        <div><b>4.9 / 5.0</b> · <span>from 340+ verified reviews · placeholder</span></div>
+      </div>
+    </div>
+    <div class="tests">
+      <article class="test">
+        <span class="stars">★★★★★</span>
+        <blockquote>Honestly the first dentist I've looked forward to going to. The team actually listens, and Dr. Natarajan walked me through every step of my veneers with zero pressure.</blockquote>
+        <div class="test-foot"><div class="test-avatar">JW</div><div><b>Jenna W.</b><span>Cosmetic patient · Midland</span></div></div>
+      </article>
+      <article class="test">
+        <span class="stars">★★★★★</span>
+        <blockquote>Took my whole family here after we moved from Saginaw. Kids are at ease, the hygienists are gentle, and front desk always remembers our names.</blockquote>
+        <div class="test-foot"><div class="test-avatar">DO</div><div><b>Derek O.</b><span>Family of 5 · Sanford</span></div></div>
+      </article>
+      <article class="test">
+        <span class="stars">★★★★★</span>
+        <blockquote>I'd put off getting an implant for years because I was anxious. Dr. Chen explained everything, showed me the 3D scan, and it was genuinely painless.</blockquote>
+        <div class="test-foot"><div class="test-avatar">SL</div><div><b>Susan L.</b><span>Implant patient · Bay City</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-intro" style="margin-bottom:48px">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">Visit or request a time</span>
+      <h2>Let's get you on the <em>schedule</em>.</h2>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-info">
+        <div class="contact-rows">
+          <div class="c-row">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="k">Address</div><div class="v"><b>4820 Jefferson Avenue</b>Midland, Michigan 48640</div></div>
+          </div>
+          <div class="c-row">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><div class="k">Phone</div><div class="v"><b>(989) 835-2700</b>Text friendly · Se habla español</div></div>
+          </div>
+          <div class="c-row">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div>
+              <div class="k">Office hours</div>
+              <div class="hours">
+                <span class="d">Monday</span><span class="h">8:00 – 5:00</span>
+                <span class="d">Tuesday</span><span class="h">8:00 – 5:00</span>
+                <span class="d today-d">Wednesday · today</span><span class="h today-h">8:00 – 7:00</span>
+                <span class="d">Thursday</span><span class="h">8:00 – 5:00</span>
+                <span class="d">Friday</span><span class="h">8:00 – 2:00</span>
+                <span class="d">Sat · Sun</span><span class="h">Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="map"><span class="map-note">[ embedded Google Map ]</span><span class="pin-dot"></span></div>
+      </div>
+
+      <form class="contact-form" onsubmit="return submitForm(event)">
+        <span class="eyebrow">Appointment request</span>
+        <h3>We'll confirm within one business day.</h3>
+        <p class="fsub">Only the fields we need — nothing more.</p>
+        <div id="formSuccess" class="form-success">Thanks — we'll follow up to confirm your appointment shortly. For urgent needs, please call (989) 835-2700.</div>
+        <div class="two-up">
+          <div class="field"><label>First name</label><input required placeholder="Jamie" /></div>
+          <div class="field"><label>Last name</label><input required placeholder="Ellis" /></div>
+        </div>
+        <div class="two-up">
+          <div class="field"><label>Phone</label><input required type="tel" placeholder="(989) 555 0146" /></div>
+          <div class="field"><label>Email</label><input type="email" placeholder="jamie@example.com" /></div>
+        </div>
+        <div class="field">
+          <label>What can we help with?</label>
+          <div class="svc-pills" id="svcPills">
+            <button type="button" class="pill active">New patient exam</button>
+            <button type="button" class="pill">Cleaning</button>
+            <button type="button" class="pill">Cosmetic consult</button>
+            <button type="button" class="pill">Invisalign</button>
+            <button type="button" class="pill">Implants</button>
+            <button type="button" class="pill">Emergency</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Preferred time</label>
+          <select>
+            <option>Weekday mornings</option>
+            <option>Weekday afternoons</option>
+            <option>Wednesday evenings</option>
+            <option>Anytime — you pick</option>
+          </select>
+        </div>
+        <div class="form-foot">
+          <span class="privacy">Your info is only used to schedule your visit.</span>
+          <button class="btn btn-primary" type="submit">Request appointment</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- CTA BAND -->
+    <div class="cta-band">
+      <div>
+        <span class="eyebrow">New patient offer</span>
+        <h3>First exam, X-rays, &amp; cleaning — <em>$99</em> for uninsured patients.</h3>
+        <p>Limited to new patients without dental insurance. Mention this offer when booking.</p>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" onclick="openModal()">Claim offer</button>
+        <a href="tel:+19898352700" class="btn btn-light">Call instead</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo-dark.webp" alt="McLaren Dental Associates" />
+        <p>A trusted family dental practice in Midland, Michigan. Caring for smiles across the Tri-Cities for three decades.</p>
+        <div class="foot-social">
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7c0-1 1-2 2-2h2V1h-3c-3 0-5 2-5 5v4H6v4h3v8z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Google"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 11v3h5a5 5 0 0 1-5 4 5 5 0 1 1 3.2-8.8l2.1-2.1A8 8 0 1 0 20 12c0-.3 0-.7-.1-1z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Practice</h5>
+        <ul><li><a href="#about">About</a></li><li><a href="#providers">Our Team</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#">Careers</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <ul><li><a href="#services">General Dentistry</a></li><li><a href="#services">Cosmetic</a></li><li><a href="#services">Implants</a></li><li><a href="#services">Invisalign</a></li><li><a href="#services">Emergency Care</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h5>Visit</h5>
+        <ul><li>4820 Jefferson Ave</li><li>Midland, MI 48640</li><li><a href="tel:+19898352700">(989) 835-2700</a></li><li><a href="#">hello@mclarendental.com</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 McLaren Dental Associates, P.C. · All rights reserved</span>
+      <span><a href="#">Privacy</a> · <a href="#">Accessibility</a> · <a href="#">HIPAA notice</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="mobile-cta">
+  <div class="lhs"><span class="d"></span> Open · closes 7:00 pm</div>
+  <div class="actions">
+    <a href="tel:+19898352700" class="btn btn-light" style="color:#fff;border-color:#ffffff33">Call</a>
+    <button class="btn btn-primary" onclick="openModal()">Book</button>
+  </div>
+</div>
+
+<!-- CHAT -->
+<div class="chat-fab">
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-head">
+      <div class="av">R</div>
+      <div>
+        <b>Ask Rachel</b>
+        <span>Practice coordinator · replies in minutes</span>
+      </div>
+      <button onclick="toggleChat()" style="margin-left:auto;color:#F0E8D6;padding:4px 8px;font-size:18px">×</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="msg bot">Hi! I'm Rachel from McLaren Dental. How can I help today?</div>
+    </div>
+    <div class="chat-quick" id="chatQuick">
+      <button onclick="quickMsg('Do you take my insurance?')">Insurance check</button>
+      <button onclick="quickMsg('Do you have availability this week?')">Availability</button>
+      <button onclick="quickMsg('How much does Invisalign cost?')">Invisalign cost</button>
+      <button onclick="quickMsg('I have a toothache, what should I do?')">Urgent care</button>
+    </div>
+    <form class="chat-foot" onsubmit="sendMsg(event)">
+      <input id="chatInput" placeholder="Type a message…" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <button class="chat-btn" onclick="toggleChat()" aria-label="Open chat">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <span class="badge">1</span>
+  </button>
+</div>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modal" onclick="if(event.target===this) closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+    <div class="step-dots"><i class="on"></i><i></i><i></i><i></i></div>
+    <span class="eyebrow">Appointment request</span>
+
+    <div class="step on" data-step="1">
+      <h3>What brings you in?</h3>
+      <p style="color:var(--ink-60);margin:0 0 6px">Pick the best match — we'll sort out the details.</p>
+      <div class="opts">
+        <button class="opt active" data-val="exam"><b>New patient exam</b><span>Cleaning, X-rays, exam</span></button>
+        <button class="opt" data-val="clean"><b>Cleaning</b><span>Routine hygiene visit</span></button>
+        <button class="opt" data-val="cosmetic"><b>Cosmetic consult</b><span>Veneers, whitening</span></button>
+        <button class="opt" data-val="invisalign"><b>Invisalign</b><span>Clear aligners</span></button>
+        <button class="opt" data-val="implant"><b>Implant consult</b><span>Missing tooth restoration</span></button>
+        <button class="opt" data-val="emergency"><b>Urgent / pain</b><span>Toothache, chipped tooth</span></button>
+      </div>
+      <div class="modal-foot"><span class="back"></span><button class="btn btn-primary" onclick="nextStep()">Continue</button></div>
+    </div>
+
+    <div class="step" data-step="2">
+      <h3>Any preference on provider?</h3>
+      <p style="color:var(--ink-60);margin:0 0 6px">We'll match you with the right clinician otherwise.</p>
+      <div class="opts">
+        <button class="opt active"><b>No preference</b><span>First available</span></button>
+        <button class="opt"><b>Dr. Chen</b><span>General, restorative</span></button>
+        <button class="opt"><b>Dr. Natarajan</b><span>Cosmetic, Invisalign</span></button>
+        <button class="opt"><b>Dr. Bellamy</b><span>Family, pediatric</span></button>
+      </div>
+      <div class="modal-foot"><button class="back" onclick="prevStep()">← Back</button><button class="btn btn-primary" onclick="nextStep()">Continue</button></div>
+    </div>
+
+    <div class="step" data-step="3">
+      <h3>Pick a time that works.</h3>
+      <p style="color:var(--ink-60);margin:0 0 6px">Wednesday, April 22 · next available slots</p>
+      <div class="time-grid">
+        <button class="time-slot dis">8:00</button>
+        <button class="time-slot dis">8:30</button>
+        <button class="time-slot">9:00</button>
+        <button class="time-slot">9:30</button>
+        <button class="time-slot active">10:00</button>
+        <button class="time-slot">10:30</button>
+        <button class="time-slot dis">11:00</button>
+        <button class="time-slot">2:00</button>
+        <button class="time-slot">2:30</button>
+        <button class="time-slot">3:00</button>
+        <button class="time-slot dis">3:30</button>
+        <button class="time-slot">4:00</button>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink-60);margin:14px 0 0">Don't see a good time? We'll follow up with more options.</p>
+      <div class="modal-foot"><button class="back" onclick="prevStep()">← Back</button><button class="btn btn-primary" onclick="nextStep()">Continue</button></div>
+    </div>
+
+    <div class="step" data-step="4">
+      <h3>Last step — how can we reach you?</h3>
+      <div class="two-up" style="margin-top:14px">
+        <div class="field"><label>First name</label><input placeholder="Jamie" /></div>
+        <div class="field"><label>Last name</label><input placeholder="Ellis" /></div>
+      </div>
+      <div class="field"><label>Phone</label><input placeholder="(989) 555 0146" /></div>
+      <div class="field"><label>Insurance (optional)</label><input placeholder="Delta Dental PPO" /></div>
+      <div class="modal-foot"><button class="back" onclick="prevStep()">← Back</button><button class="btn btn-primary" onclick="finishModal()">Confirm request</button></div>
+    </div>
+
+    <div class="step" data-step="5">
+      <div style="text-align:center;padding:8px 0 4px">
+        <div style="width:64px;height:64px;border-radius:50%;background:#CDE6D4;color:#1F5A38;display:grid;place-items:center;margin:0 auto 16px;font-size:30px">✓</div>
+        <h3 style="margin-top:0">You're on the list.</h3>
+        <p style="color:var(--ink-60);max-width:34ch;margin:0 auto">We'll text you within one business day to confirm — sooner if you picked an urgent option.</p>
+        <button class="btn btn-primary" onclick="closeModal()" style="margin-top:22px">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer" onclick="if(event.target.classList.contains('bg')) toggleDrawer(false)">
+  <div class="bg"></div>
+  <div class="panel">
+    <button class="close" onclick="toggleDrawer(false)">×</button>
+    <img src="assets/logo-dark.webp" alt="McLaren Dental" style="height:36px;margin-bottom:12px" />
+    <h6>Navigate</h6>
+    <a href="#services" onclick="toggleDrawer(false)">Services</a>
+    <a href="#providers" onclick="toggleDrawer(false)">Our Team</a>
+    <a href="#why" onclick="toggleDrawer(false)">Why McLaren</a>
+    <a href="#insurance" onclick="toggleDrawer(false)">Insurance</a>
+    <a href="#reviews" onclick="toggleDrawer(false)">Reviews</a>
+    <a href="#contact" onclick="toggleDrawer(false)">Contact</a>
+    <h6>Get in touch</h6>
+    <a href="tel:+19898352700" style="font-size:20px">(989) 835-2700</a>
+    <button class="btn btn-primary" style="margin-top:20px" onclick="toggleDrawer(false);openModal()">Request Appointment</button>
+  </div>
+</div>
+
+<script>
+  // Nav scrolled state
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', ()=> nav.classList.toggle('scrolled', window.scrollY > 10));
+
+  // Modal multi-step
+  let step = 1;
+  const totalSteps = 5;
+  function openModal(){ document.getElementById('modal').classList.add('open'); document.body.style.overflow='hidden'; goToStep(1) }
+  function closeModal(){ document.getElementById('modal').classList.remove('open'); document.body.style.overflow=''; }
+  function goToStep(n){
+    step = n;
+    document.querySelectorAll('.step').forEach(s=>s.classList.remove('on'));
+    document.querySelector('.step[data-step="'+n+'"]').classList.add('on');
+    document.querySelectorAll('.step-dots i').forEach((d,i)=> d.classList.toggle('on', i < n));
+  }
+  function nextStep(){ if(step<totalSteps) goToStep(step+1) }
+  function prevStep(){ if(step>1) goToStep(step-1) }
+  function finishModal(){ goToStep(5) }
+  document.querySelectorAll('.modal .step').forEach(s=>{
+    s.querySelectorAll('.opt').forEach(o=>{
+      o.addEventListener('click', ()=>{
+        s.querySelectorAll('.opt').forEach(x=>x.classList.remove('active'));
+        o.classList.add('active');
+      });
+    });
+    s.querySelectorAll('.time-slot').forEach(t=>{
+      t.addEventListener('click', ()=>{
+        if(t.classList.contains('dis')) return;
+        s.querySelectorAll('.time-slot').forEach(x=>x.classList.remove('active'));
+        t.classList.add('active');
+      });
+    });
+  });
+
+  // Form pills
+  document.querySelectorAll('#svcPills .pill').forEach(p=>{
+    p.addEventListener('click', ()=>{
+      document.querySelectorAll('#svcPills .pill').forEach(x=>x.classList.remove('active'));
+      p.classList.add('active');
+    });
+  });
+  function submitForm(e){ e.preventDefault(); document.getElementById('formSuccess').classList.add('visible'); e.target.reset(); setTimeout(()=>document.getElementById('formSuccess').classList.remove('visible'), 6000); return false }
+
+  // Drawer
+  function toggleDrawer(open){
+    const d = document.getElementById('drawer');
+    if(open===undefined) d.classList.toggle('open');
+    else d.classList.toggle('open', open);
+  }
+
+  // Financing calc
+  const calcRange = document.getElementById('calcRange');
+  const calcAmt = document.getElementById('calcAmt');
+  const calcVal = document.getElementById('calcVal');
+  let term = 12;
+  function fmt(n){ return '$' + Math.round(n).toLocaleString() }
+  function updateCalc(){
+    const amt = +calcRange.value;
+    calcAmt.textContent = fmt(amt);
+    const apr = term <= 24 ? 0 : 0.149;
+    let monthly = apr === 0 ? amt/term : (amt * (apr/12) / (1 - Math.pow(1+apr/12,-term)));
+    calcVal.innerHTML = fmt(monthly) + '<small> / mo</small>';
+  }
+  calcRange.addEventListener('input', updateCalc);
+  document.querySelectorAll('#termSegs .seg').forEach(s=>{
+    s.addEventListener('click', ()=>{
+      document.querySelectorAll('#termSegs .seg').forEach(x=>x.classList.remove('active'));
+      s.classList.add('active');
+      term = +s.dataset.m;
+      updateCalc();
+    });
+  });
+  updateCalc();
+
+  // Chat
+  function toggleChat(){ document.getElementById('chatPanel').classList.toggle('open') }
+  function addMsg(text, who){
+    const body = document.getElementById('chatBody');
+    const m = document.createElement('div');
+    m.className = 'msg ' + who;
+    m.textContent = text;
+    body.appendChild(m);
+    body.scrollTop = body.scrollHeight;
+  }
+  const chatReplies = {
+    insurance: "We're in-network with Delta, BCBS of Michigan, Cigna, Aetna, MetLife, and Guardian — and file most PPOs out-of-network. Want me to verify your plan?",
+    availability: "Yes! We have openings this week — Wednesday evening, Thursday morning, and Friday 1pm. Want me to hold one?",
+    invisalign: "Invisalign ranges from $3,500–$6,500 depending on complexity. We offer 0% financing for up to 24 months. Dr. Natarajan does free consults.",
+    urgent: "Sorry you're in pain. Please call (989) 835-2700 — we reserve same-day slots for urgent needs. After-hours calls route to our on-call dentist.",
+    default: "Got it — I'll pass this to our scheduling team. What's the best number to reach you?"
+  };
+  function botReply(userText){
+    const t = userText.toLowerCase();
+    let key = 'default';
+    if(t.includes('insur')) key='insurance';
+    else if(t.includes('avail')||t.includes('this week')||t.includes('appointment')) key='availability';
+    else if(t.includes('invisalign')||t.includes('cost')||t.includes('align')) key='invisalign';
+    else if(t.includes('tooth')||t.includes('pain')||t.includes('emerg')||t.includes('urgent')) key='urgent';
+    setTimeout(()=> addMsg(chatReplies[key], 'bot'), 500);
+  }
+  function quickMsg(text){ addMsg(text,'me'); botReply(text); document.getElementById('chatQuick').style.display = 'none' }
+  function sendMsg(e){
+    e.preventDefault();
+    const i = document.getElementById('chatInput');
+    const v = i.value.trim(); if(!v) return;
+    addMsg(v,'me'); i.value=''; botReply(v);
+    document.getElementById('chatQuick').style.display = 'none';
+  }
+
+  // Before/after drag
+  document.querySelectorAll('.ba-img').forEach(el=>{
+    const divider = el.querySelector('.ba-divider');
+    const handle = el.querySelector('.ba-handle');
+    let dragging=false;
+    const move = (clientX)=>{
+      const r = el.getBoundingClientRect();
+      const pct = Math.max(10, Math.min(90, ((clientX - r.left)/r.width)*100));
+      divider.style.left = pct + '%';
+      handle.style.left = pct + '%';
+    };
+    handle.addEventListener('mousedown', e=>{dragging=true; e.preventDefault()});
+    window.addEventListener('mousemove', e=>{ if(dragging) move(e.clientX) });
+    window.addEventListener('mouseup', ()=> dragging=false);
+    handle.addEventListener('touchstart', ()=>{dragging=true});
+    window.addEventListener('touchmove', e=>{ if(dragging && e.touches[0]) move(e.touches[0].clientX) });
+    window.addEventListener('touchend', ()=> dragging=false);
+  });
+
+  // Esc
+  window.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeModal(); document.getElementById('chatPanel').classList.remove('open'); toggleDrawer(false) } });
+</script>
+</body>
+</html>

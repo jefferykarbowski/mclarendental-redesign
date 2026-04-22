@@ -1,0 +1,10 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Claude / tooling scratch
+.playwright-mcp/
+qa-*.png

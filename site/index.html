@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>McLaren Dental Associates — Family &amp; Cosmetic Dentistry in Midland, Michigan</title>
+<meta name="description" content="McLaren Dental Associates is a family and cosmetic dental practice in Midland, Michigan. Compassionate care, experienced clinicians, and a patient-centered approach for every age." />
+<link rel="icon" href="assets/logo-mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="util">
+  <div class="wrap">
+    <div class="left">
+      <span><span class="dot"></span>Accepting new patients</span>
+      <span id="utilHours">Open today</span>
+    </div>
+    <div class="right">
+      <a href="tel:+19896317880">(989) 631-7880</a>
+      <a href="#contact">Directions</a>
+      <a href="https://www.facebook.com/McLarenDentalMidland" target="_blank" rel="noopener" style="color:var(--gold)">Facebook ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="McLaren Dental Associates home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="48" height="48"><polygon points="4,24 24,6 44,24 24,42" fill="var(--navy)" stroke="var(--gold)" stroke-width="1"/><text x="24" y="32" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="26" fill="#F7F1E6">M</text></svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">McLaren Dental</span>
+        <span class="brand-sub">Associates · Midland, MI</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#providers">Our Team</a>
+      <a href="#why">Why McLaren</a>
+      <a href="#insurance">Insurance</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+19896317880" class="btn btn-ghost btn-sm">(989) 631-7880</a>
+      <button class="btn btn-primary btn-sm" onclick="openModal()">Request Appointment</button>
+      <button class="menu-btn" onclick="toggleDrawer(true)" aria-label="Menu">
+        <svg width="20" height="14" viewBox="0 0 20 14"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.8"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-media-full">
+    <img src="assets/office.webp" alt="Inside the McLaren Dental Associates office in Midland, Michigan" />
+    <div class="hero-accepting"><span class="d"></span> Now accepting new patients</div>
+    <div class="hero-overlay">
+      <div class="wrap hero-overlay-inner">
+        <div class="hero-text">
+          <span class="eyebrow">Family &amp; Cosmetic Dentistry · Midland, Michigan</span>
+          <h1><em>Exceptional dentistry</em>,<br/><span class="rule"></span>close to home.</h1>
+          <p class="hero-sub">Comprehensive, compassionate dental care for every age — delivered by a team of four experienced clinicians in a warm, modern Midland office.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" onclick="openModal()">Request Appointment</button>
+            <a href="tel:+19896317880" class="btn btn-light">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              Call (989) 631-7880
+            </a>
+          </div>
+          <div class="hero-meta">
+            <div><div class="k">Providers</div><div class="v">4 clinicians</div></div>
+            <div><div class="k">Ages served</div><div class="v">All ages</div></div>
+            <div><div class="k">Location</div><div class="v">Midland, MI</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BELT -->
+<section class="belt">
+  <div class="wrap">
+    <div class="belt-item">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l9 5v6c0 5-4 9-9 9s-9-4-9-9V7l9-5z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div><div class="k">Comprehensive care</div><div class="v">General, cosmetic &amp; restorative under one roof</div></div>
+    </div>
+    <div class="belt-item">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M15 20c0-2 2-3 4-3s3 1 3 3"/></svg></div>
+      <div><div class="k">Family practice</div><div class="v">Welcoming children, adults &amp; seniors</div></div>
+    </div>
+    <div class="belt-item">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 10h18M7 14h4"/></svg></div>
+      <div><div class="k">Most PPOs accepted</div><div class="v">Insurance filed · CareCredit®, HFD &amp; Sunbit financing</div></div>
+    </div>
+    <div class="belt-item">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="3"/></svg></div>
+      <div><div class="k">Modern facilities</div><div class="v">State-of-the-art equipment &amp; digital imaging</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">What we offer</span>
+      <h2>Complete care for <em>every stage</em> of life.</h2>
+      <p>From a child's first cleaning to a complete smile makeover, our team delivers a full range of services — all in one comfortable Midland office.</p>
+    </div>
+
+    <div class="services">
+      <div class="svc" onclick="openModal()">
+        <div class="num">i.</div>
+        <h3>General Dentistry</h3>
+        <p>Comprehensive exams, cleanings, fillings, and preventive care — the foundation of a healthy smile at every age.</p>
+        <span class="svc-link">Learn more</span>
+      </div>
+      <div class="svc" onclick="openModal()">
+        <div class="num">ii.</div>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Veneers, bonding, and smile design — from subtle refinements to full makeovers, tailored to the smile you want.</p>
+        <span class="svc-link">Book a smile consult</span>
+      </div>
+      <div class="svc" onclick="openModal()">
+        <div class="num">iii.</div>
+        <h3>Dental Implants</h3>
+        <p>Natural-looking, long-lasting tooth replacement — from single implants to fuller restorations, carefully planned.</p>
+        <span class="svc-link">Learn more</span>
+      </div>
+      <div class="svc" onclick="openModal()">
+        <div class="num">iv.</div>
+        <h3>Invisalign®</h3>
+        <p>Clear, removable aligners to straighten your smile — discreet treatment with routine check-in visits.</p>
+        <span class="svc-link">See if you're a candidate</span>
+      </div>
+      <div class="svc" onclick="openModal()">
+        <div class="num">v.</div>
+        <h3>Teeth Whitening</h3>
+        <p>Professional in-office and take-home whitening options — visibly brighter results and safer than over-the-counter kits.</p>
+        <span class="svc-link">Whitening options</span>
+      </div>
+      <div class="svc" onclick="openModal()">
+        <div class="num">vi.</div>
+        <h3>Emergency Care</h3>
+        <p>Toothache, chipped tooth, or lost restoration? Call us — we do our best to see urgent needs the same day.</p>
+        <span class="svc-link">Call now</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about sec" id="about">
+  <div class="wrap">
+    <div class="about-split">
+      <div class="about-img" style="background:none">
+        <!-- Real office photo pulled from live site video poster -->
+        <img src="assets/office.webp" alt="Interior view of McLaren Dental Associates" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0"/>
+        <div class="est">
+          <span class="serif">Proudly</span>
+          <div class="big">Midland</div>
+          <div class="s">Family owned &amp; operated</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">About the practice</span>
+        <h2>Compassionate care &amp; <em>exceptional service</em> — for every patient, every visit.</h2>
+        <p>McLaren Dental Associates is a family and cosmetic dental office in Midland, Michigan, providing quality, affordable, and personalized dental care for people of all ages.</p>
+        <p>Our team is committed to compassionate care and exceptional service in a professional, positive, and comfortable environment — from routine cleanings to complete smile transformations.</p>
+        <div class="sig">— The McLaren Dental team</div>
+        <div class="sig-name">Midland, Michigan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVIDERS -->
+<section class="sec" id="providers" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">Meet the team</span>
+      <h2>Familiar faces. <em>Exceptional</em> care.</h2>
+      <p>Four experienced clinicians — each committed to ongoing education and the kind of patient-centered care that keeps families coming back.</p>
+    </div>
+    <div class="providers providers-4">
+      <!-- DEMO: Provider headshots are initial monograms — swap in real headshots when available. -->
+      <article class="provider">
+        <div class="photo mono"><span class="initials">JM</span><span class="lbl">Placeholder · swap headshot</span></div>
+        <div class="meta">
+          <div class="creds">B.S.E., D.D.S., M.S.</div>
+          <h4>Dr. John McLaren</h4>
+          <div class="role">General &amp; Restorative</div>
+          <p class="bio">A foundational member of the McLaren Dental team, focused on restorative and general dentistry for patients of all ages.</p>
+        </div>
+      </article>
+      <article class="provider">
+        <div class="photo mono"><span class="initials">CM</span><span class="lbl">Placeholder · swap headshot</span></div>
+        <div class="meta">
+          <div class="creds">B.S.E., D.D.S., M.S.</div>
+          <h4>Dr. Charles McLaren</h4>
+          <div class="role">General &amp; Restorative</div>
+          <p class="bio">Provides comprehensive general and restorative dentistry, partnering closely with patients on long-term oral health plans.</p>
+        </div>
+      </article>
+      <article class="provider">
+        <div class="photo mono"><span class="initials">MJ</span><span class="lbl">Placeholder · swap headshot</span></div>
+        <div class="meta">
+          <div class="creds">B.S., D.D.S.</div>
+          <h4>Dr. Melissa Janos</h4>
+          <div class="role">Family &amp; Cosmetic</div>
+          <p class="bio">Known for a warm chairside manner and a detail-focused approach to cosmetic and family dentistry.</p>
+        </div>
+      </article>
+      <article class="provider">
+        <div class="photo mono"><span class="initials">DM</span><span class="lbl">Placeholder · swap headshot</span></div>
+        <div class="meta">
+          <div class="creds">B.S., D.D.S.</div>
+          <h4>Dr. Devan Moody</h4>
+          <div class="role">General Dentistry</div>
+          <p class="bio">Brings a modern, patient-centered approach to general dentistry with a focus on preventive care and clear communication.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why sec" id="why">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow" style="color:var(--gold)">Why patients choose us</span>
+      <h2>Care that feels as good as it <em>looks</em>.</h2>
+      <p>The small, human details that turn a dental appointment into something you don't dread — and keep Midland families coming back.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-8-4.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-8 11-8 11z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></svg></div>
+        <h4>Unhurried visits</h4>
+        <p>We take the time to listen, explain your options, and answer questions — so you leave feeling informed, not rushed.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></div>
+        <h4>Experienced clinicians</h4>
+        <p>Four doctors focused on comprehensive, evidence-based care — with a patient-centered approach at every visit.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 9h18M7 14h4M15 14h2"/></svg></div>
+        <h4>Modern facilities</h4>
+        <p>State-of-the-art equipment and digital imaging, so treatment is more comfortable, efficient, and informed.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2v20M7 6h8a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h9"/></svg></div>
+        <h4>Flexible financing</h4>
+        <p>We file insurance for you, and CareCredit®, HFD, and Sunbit financing are available for qualified patients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSURANCE / FINANCING -->
+<section class="sec" id="insurance">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">Insurance &amp; financing</span>
+      <h2>Great dentistry shouldn't be <em>complicated</em>.</h2>
+      <p>We file insurance claims on your behalf and partner with CareCredit®, HFD, and Sunbit for flexible monthly payment options when you need them.</p>
+    </div>
+    <div class="finance-grid">
+      <div>
+        <div class="smallcaps" style="margin-bottom:6px">PPO providers for</div>
+        <div class="insurers">
+          <div class="insurer">Connection<small>Dental PPO</small></div>
+          <div class="insurer">Careington<small>Dental PPO</small></div>
+        </div>
+        <div class="smallcaps" style="margin:28px 0 6px">Also accepted</div>
+        <div class="insurers">
+          <div class="insurer">Aetna<small>Dental</small></div>
+          <div class="insurer">United Healthcare<small>Dental</small></div>
+          <div class="insurer">United Concordia<small>Dental</small></div>
+          <div class="insurer">Principal<small>Dental</small></div>
+        </div>
+        <p class="finance-note">Don't see your plan? Call us — we're happy to verify your benefits and let you know exactly what's covered before your visit.</p>
+      </div>
+      <div class="calc">
+        <h4>Financing estimator</h4>
+        <p class="calc-sub">Estimate monthly payments for larger treatment via CareCredit®, HFD, or Sunbit.</p>
+        <div class="row">
+          <div class="amt"><label>Treatment cost</label><span class="v" id="calcAmt">$3,500</span></div>
+          <input type="range" id="calcRange" min="500" max="15000" step="250" value="3500" aria-label="Treatment cost" />
+        </div>
+        <div class="row">
+          <label>Repayment term</label>
+          <div class="segs" id="termSegs">
+            <button class="seg" data-m="6">6 mo</button>
+            <button class="seg active" data-m="12">12 mo</button>
+            <button class="seg" data-m="24">24 mo</button>
+            <button class="seg" data-m="60">60 mo</button>
+          </div>
+        </div>
+        <div class="result">
+          <span class="lbl">Est. monthly</span>
+          <span class="val" id="calcVal">$292<small> / mo</small></span>
+        </div>
+        <div class="finance-note" style="margin-top:14px;color:#D9CDB299">Estimate only. Actual rates and terms depend on plan and credit approval. Ask our team for details and eligibility.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect sec" id="expect">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">New patient visit</span>
+      <h2>What to expect, <em>start to finish</em>.</h2>
+      <p>Your first visit sets the foundation for everything that follows. Here's how it goes — no surprises.</p>
+    </div>
+    <div class="expect-grid">
+      <div class="expect-step">
+        <div class="expect-num">i.</div>
+        <h4>A warm welcome</h4>
+        <p>Arrive, meet your hygienist, and let us verify your insurance so you know exactly what's covered before we begin.</p>
+        <time>~10 min</time>
+      </div>
+      <div class="expect-step">
+        <div class="expect-num">ii.</div>
+        <h4>Gentle exam &amp; imaging</h4>
+        <p>Digital X-rays and an oral exam with your dentist. We review everything with you on-screen — not at you.</p>
+        <time>~20 min</time>
+      </div>
+      <div class="expect-step">
+        <div class="expect-num">iii.</div>
+        <h4>Cleaning &amp; conversation</h4>
+        <p>A thorough but gentle cleaning from your hygienist, with time to talk through what we see and any concerns you have.</p>
+        <time>~30 min</time>
+      </div>
+      <div class="expect-step">
+        <div class="expect-num">iv.</div>
+        <h4>Plan &amp; transparent quote</h4>
+        <p>Leave with a written plan, a clear estimate, and time to think. Nothing is pressured — treatment happens on your timeline.</p>
+        <time>~10 min</time>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<!-- DEMO: Placeholder testimonials for proposal polish. Replace with verified Google/Facebook reviews before launch. -->
+<section class="reviews sec" id="reviews">
+  <div class="wrap">
+    <div class="sec-intro">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">In patients' own words</span>
+      <h2>The kind of dentist your friends <em>recommend</em>.</h2>
+      <p style="margin-top:16px;font-size:13px;color:var(--ink-45)">Sample testimonials shown for layout — replace with real patient reviews before launch.</p>
+    </div>
+    <div class="tests">
+      <article class="test">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote>The whole team was patient, kind, and took the time to explain every step. I left feeling like I understood exactly what was happening — and why.</blockquote>
+        <div class="test-foot"><div class="test-avatar">J.</div><div><b>Sample Review · Placeholder</b><span>Midland, MI</span></div></div>
+      </article>
+      <article class="test">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote>Brought my whole family here and everyone — from my seven-year-old to my dad — feels comfortable walking in the door. That says everything.</blockquote>
+        <div class="test-foot"><div class="test-avatar">S.</div><div><b>Sample Review · Placeholder</b><span>Midland, MI</span></div></div>
+      </article>
+      <article class="test">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote>Modern office, honest recommendations, and zero pressure. They walked me through financing options and the work looks fantastic.</blockquote>
+        <div class="test-foot"><div class="test-avatar">M.</div><div><b>Sample Review · Placeholder</b><span>Midland, MI</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-intro" style="margin-bottom:48px">
+      <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+      <span class="eyebrow">Visit or request a time</span>
+      <h2>Let's get you on the <em>schedule</em>.</h2>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-info">
+        <div class="contact-rows">
+          <div class="c-row">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="k">Address</div><div class="v"><b>308 Northgate Drive</b>Midland, Michigan 48640</div></div>
+          </div>
+          <div class="c-row">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></span>
+            <div><div class="k">Phone</div><div class="v"><b>(989) 631-7880</b>Call or text to schedule</div></div>
+          </div>
+          <div class="c-row">
+            <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div>
+              <div class="k">Office hours</div>
+              <div class="hours" id="hoursList">
+                <span class="d" data-day="1">Monday</span><span class="h">8:00 am – 5:30 pm</span>
+                <span class="d" data-day="2">Tuesday</span><span class="h">8:00 am – 5:30 pm</span>
+                <span class="d" data-day="3">Wednesday</span><span class="h">8:00 am – 5:30 pm</span>
+                <span class="d" data-day="4">Thursday</span><span class="h">8:00 am – 4:30 pm</span>
+                <span class="d" data-day="5">Friday</span><span class="h">8:00 am – 4:30 pm</span>
+                <span class="d" data-day="6">Sat &amp; Sun</span><span class="h">Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&query=308+Northgate+Drive+Midland+MI+48640" target="_blank" rel="noopener" aria-label="Open directions to 308 Northgate Drive, Midland, MI in Google Maps">
+          <span class="map-note">Open in Google Maps ↗</span>
+          <span class="pin-dot"></span>
+        </a>
+      </div>
+
+      <form class="contact-form" onsubmit="return submitForm(event)">
+        <span class="eyebrow">Appointment request</span>
+        <h3>We'll confirm within one business day.</h3>
+        <p class="fsub">Just the essentials — we'll handle the rest by phone.</p>
+        <div id="formSuccess" class="form-success">Thanks — we'll follow up to confirm your appointment shortly. For urgent needs, please call (989) 631-7880.</div>
+        <div class="two-up">
+          <div class="field"><label for="fn">First name</label><input id="fn" name="fn" required placeholder="Jamie" /></div>
+          <div class="field"><label for="ln">Last name</label><input id="ln" name="ln" required placeholder="Ellis" /></div>
+        </div>
+        <div class="two-up">
+          <div class="field"><label for="ph">Phone</label><input id="ph" name="ph" required type="tel" placeholder="(989) 555 0146" /></div>
+          <div class="field"><label for="em">Email <span style="text-transform:none;letter-spacing:0;color:var(--ink-45);font-weight:500">(optional)</span></label><input id="em" name="em" type="email" placeholder="jamie@example.com" /></div>
+        </div>
+        <div class="field">
+          <label>What can we help with?</label>
+          <div class="svc-pills" id="svcPills">
+            <button type="button" class="pill active">New patient exam</button>
+            <button type="button" class="pill">Cleaning</button>
+            <button type="button" class="pill">Cosmetic consult</button>
+            <button type="button" class="pill">Invisalign</button>
+            <button type="button" class="pill">Implants</button>
+            <button type="button" class="pill">Emergency</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="pt">Preferred time</label>
+          <select id="pt" name="pt">
+            <option>Weekday mornings</option>
+            <option>Weekday afternoons</option>
+            <option>Anytime — you pick</option>
+          </select>
+        </div>
+        <div class="form-foot">
+          <span class="privacy">Your info is only used to schedule your visit.</span>
+          <button class="btn btn-primary" type="submit">Request appointment</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- CTA BAND -->
+    <div class="cta-band">
+      <div>
+        <span class="eyebrow">New to McLaren Dental?</span>
+        <h3>We'll verify your insurance benefits <em>before</em> your first visit.</h3>
+        <p>So you know exactly what's covered — and what isn't — before you sit in the chair.</p>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" onclick="openModal()">Request Appointment</button>
+        <a href="tel:+19896317880" class="btn btn-light">Call instead</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo-white.png" alt="McLaren Dental Associates" />
+        <p>A family and cosmetic dental office located in Midland, Michigan. Quality, affordable, and personalized dental care for people of all ages.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/McLarenDentalMidland" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l1-4h-4V7c0-1 1-2 2-2h2V1h-3c-3 0-5 2-5 5v4H6v4h3v8z"/></svg></a>
+          <a href="https://www.google.com/maps/search/?api=1&query=308+Northgate+Drive+Midland+MI+48640" target="_blank" rel="noopener" aria-label="Google Maps"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Practice</h5>
+        <ul><li><a href="#about">About</a></li><li><a href="#providers">Our Team</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#insurance">Insurance</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <ul><li><a href="#services">General Dentistry</a></li><li><a href="#services">Cosmetic Dentistry</a></li><li><a href="#services">Implants</a></li><li><a href="#services">Invisalign</a></li><li><a href="#services">Teeth Whitening</a></li><li><a href="#services">Emergency Care</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h5>Visit</h5>
+        <ul><li>308 Northgate Drive</li><li>Midland, MI 48640</li><li><a href="tel:+19896317880">(989) 631-7880</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> McLaren Dental Associates, P.C. · All rights reserved</span>
+      <span><a href="#">Privacy</a> · <a href="#">Accessibility</a> · <a href="#">HIPAA notice</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="mobile-cta">
+  <div class="lhs"><span class="d"></span><span id="mobileOpen">Open today</span></div>
+  <div class="actions">
+    <a href="tel:+19896317880" class="btn btn-light" style="color:#fff;border-color:#ffffff33">Call</a>
+    <button class="btn btn-primary" onclick="openModal()">Book</button>
+  </div>
+</div>
+
+<!-- MODAL (Multi-step appointment request) -->
+<div class="modal-backdrop" id="modal" onclick="if(event.target===this) closeModal()">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+    <div class="step-dots"><i class="on"></i><i></i><i></i><i></i></div>
+    <span class="eyebrow">Appointment request</span>
+
+    <div class="step on" data-step="1">
+      <h3 id="modalTitle">What brings you in?</h3>
+      <p style="color:var(--ink-60);margin:0 0 6px">Pick the best match — we'll sort out the details.</p>
+      <div class="opts">
+        <button class="opt active" data-val="exam"><b>New patient exam</b><span>Cleaning, X-rays, exam</span></button>
+        <button class="opt" data-val="clean"><b>Cleaning</b><span>Routine hygiene visit</span></button>
+        <button class="opt" data-val="cosmetic"><b>Cosmetic consult</b><span>Veneers, whitening</span></button>
+        <button class="opt" data-val="invisalign"><b>Invisalign®</b><span>Clear aligners</span></button>
+        <button class="opt" data-val="implant"><b>Implant consult</b><span>Missing tooth restoration</span></button>
+        <button class="opt" data-val="emergency"><b>Urgent / pain</b><span>Toothache, chipped tooth</span></button>
+      </div>
+      <div class="modal-foot"><span class="back"></span><button class="btn btn-primary" onclick="nextStep()">Continue</button></div>
+    </div>
+
+    <div class="step" data-step="2">
+      <h3>Any preference on provider?</h3>
+      <p style="color:var(--ink-60);margin:0 0 6px">We'll match you with the right clinician otherwise.</p>
+      <div class="opts">
+        <button class="opt active"><b>No preference</b><span>First available</span></button>
+        <button class="opt"><b>Dr. John McLaren</b><span>General, restorative</span></button>
+        <button class="opt"><b>Dr. Charles McLaren</b><span>General, restorative</span></button>
+        <button class="opt"><b>Dr. Melissa Janos</b><span>Family, cosmetic</span></button>
+        <button class="opt"><b>Dr. Devan Moody</b><span>General dentistry</span></button>
+      </div>
+      <div class="modal-foot"><button class="back" onclick="prevStep()">← Back</button><button class="btn btn-primary" onclick="nextStep()">Continue</button></div>
+    </div>
+
+    <div class="step" data-step="3">
+      <h3>Pick a time that works.</h3>
+      <p style="color:var(--ink-60);margin:0 0 6px" id="modalDate">Next available slots</p>
+      <div class="time-grid">
+        <button type="button" class="time-slot">8:00</button>
+        <button type="button" class="time-slot">8:30</button>
+        <button type="button" class="time-slot">9:00</button>
+        <button type="button" class="time-slot active">9:30</button>
+        <button type="button" class="time-slot">10:00</button>
+        <button type="button" class="time-slot">10:30</button>
+        <button type="button" class="time-slot dis">11:00</button>
+        <button type="button" class="time-slot">2:00</button>
+        <button type="button" class="time-slot">2:30</button>
+        <button type="button" class="time-slot">3:00</button>
+        <button type="button" class="time-slot">3:30</button>
+        <button type="button" class="time-slot">4:00</button>
+      </div>
+      <p style="font-size:12.5px;color:var(--ink-60);margin:14px 0 0">Don't see a good time? We'll follow up with more options.</p>
+      <div class="modal-foot"><button class="back" onclick="prevStep()">← Back</button><button class="btn btn-primary" onclick="nextStep()">Continue</button></div>
+    </div>
+
+    <div class="step" data-step="4">
+      <h3>Last step — how can we reach you?</h3>
+      <div class="two-up" style="margin-top:14px">
+        <div class="field"><label>First name</label><input placeholder="Jamie" /></div>
+        <div class="field"><label>Last name</label><input placeholder="Ellis" /></div>
+      </div>
+      <div class="field"><label>Phone</label><input placeholder="(989) 555 0146" /></div>
+      <div class="field"><label>Insurance <span style="text-transform:none;letter-spacing:0;color:var(--ink-45);font-weight:500">(optional)</span></label><input placeholder="Connection, Careington, Aetna…" /></div>
+      <div class="modal-foot"><button class="back" onclick="prevStep()">← Back</button><button class="btn btn-primary" onclick="finishModal()">Confirm request</button></div>
+    </div>
+
+    <div class="step" data-step="5">
+      <div style="text-align:center;padding:8px 0 4px">
+        <div style="width:64px;height:64px;border-radius:50%;background:#CDE6D4;color:#1F5A38;display:grid;place-items:center;margin:0 auto 16px;font-size:30px">✓</div>
+        <h3 style="margin-top:0">You're on the list.</h3>
+        <p style="color:var(--ink-60);max-width:34ch;margin:0 auto">We'll reach out within one business day to confirm your appointment — sooner if you selected an urgent option.</p>
+        <button class="btn btn-primary" onclick="closeModal()" style="margin-top:22px">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DRAWER (mobile nav) -->
+<div class="drawer" id="drawer" onclick="if(event.target.classList.contains('bg')) toggleDrawer(false)">
+  <div class="bg"></div>
+  <div class="panel">
+    <button class="close" onclick="toggleDrawer(false)" aria-label="Close menu">×</button>
+    <div class="drawer-brand" aria-hidden="true">
+      <svg viewBox="0 0 48 48" width="40" height="40"><polygon points="4,24 24,6 44,24 24,42" fill="var(--navy)" stroke="var(--gold)" stroke-width="1"/><text x="24" y="32" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="26" fill="#F7F1E6">M</text></svg>
+      <div><div class="brand-name">McLaren Dental</div><div class="brand-sub">Associates</div></div>
+    </div>
+    <h6>Navigate</h6>
+    <a href="#services" onclick="toggleDrawer(false)">Services</a>
+    <a href="#providers" onclick="toggleDrawer(false)">Our Team</a>
+    <a href="#why" onclick="toggleDrawer(false)">Why McLaren</a>
+    <a href="#insurance" onclick="toggleDrawer(false)">Insurance</a>
+    <a href="#reviews" onclick="toggleDrawer(false)">Reviews</a>
+    <a href="#contact" onclick="toggleDrawer(false)">Contact</a>
+    <h6>Get in touch</h6>
+    <a href="tel:+19896317880" style="font-size:20px">(989) 631-7880</a>
+    <button class="btn btn-primary" style="margin-top:20px" onclick="toggleDrawer(false);openModal()">Request Appointment</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
