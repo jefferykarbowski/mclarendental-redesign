@@ -20,8 +20,11 @@ site/
   styles.css     # All styles
   app.js         # Nav, modal, hours, financing calc, drawer, form
   assets/
-    logo-mark.png   # Real logo — pulled from live site
-    logo-white.png  # Real white wordmark — pulled from live site
+    logo-white.png  # White-on-transparent wordmark (dark backgrounds — footer)
+    logo-dark.png   # Dark-on-transparent wordmark (light backgrounds — favicon)
+    provider-john-mclaren.webp    # Real headshot (from live site)
+    provider-charles-mclaren.webp # Real headshot (from live site)
+    provider-melissa-janos.webp   # Real headshot (from live site)
     hero.mp4        # Real hero video — autoplay, muted, looped (~40 MB)
     office.webp     # Real office still — used as video poster and fallback
   README.md
@@ -52,7 +55,7 @@ site/
 
 ## What is placeholder/demo-only (clearly marked in code)
 
-- **Provider photos** — rendered as serif-initial monograms on a navy gradient. The live site does not expose standalone provider headshots from the homepage; swap in real photos when provided. The tiles are labeled "Placeholder · swap headshot" in a small dev tag.
+- **Provider photos** — three of four are real, pulled from the live site's `/meet-our-team` page (Dr. John McLaren, Dr. Charles McLaren, Dr. Melissa Janos). Dr. Devan Moody has no headshot on the live site, so his card uses a serif-initial monogram tagged "Headshot pending" until one is provided.
 - **Testimonials** — three sample testimonials shown under clear "Sample Review · Placeholder" labels and an in-section note stating they are for layout only. Replace with real Google/Facebook reviews before launch.
 - **Map panel** — a tasteful styled-CSS placeholder that links through to Google Maps directions for the real address. Swap for an embedded `<iframe>` Google Map or Mapbox tile if preferred.
 - **Financing estimator** — a demo calculator using simple arithmetic. 0% APR is assumed for ≤24-month terms; a typical ~14.9% APR is used for the 60-month example. Results are explicitly labeled as estimates only. Replace with true CareCredit®/HFD/Sunbit rate lookups before production.
@@ -73,7 +76,7 @@ site/
 
 | Item | How to replace |
 | --- | --- |
-| Provider headshots (4) | Drop real WebP/JPG files into `assets/` and swap the `.photo.mono` block inside `#providers` for an `<img>` |
+| Dr. Devan Moody headshot | Drop a WebP/JPG into `assets/provider-devan-moody.webp` and swap his `.photo.mono` block for a `.photo.portrait` img (like the other three) |
 | Real patient testimonials | Pull from Google Business / Facebook reviews, update the three `.test` blocks |
 | Embedded Google Map | Replace the `<a class="map">` block with an `<iframe>` map embed |
 | Verified service list | Confirm Emergency Care is offered and whether to add/remove any tiles |
